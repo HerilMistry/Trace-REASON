@@ -1,0 +1,20 @@
+[
+  {
+    "name": "EGFR",
+    "uniprot": "P00533",
+    "ec_number": "2.7.10.1",
+    "family": "Kinase",
+    "disease": "Lung Cancer",
+    "sequence": "MRPSGTAGA..."
+  },
+  {
+    "name": "BACE1",
+    "uniprot": "P56817",
+    "ec_number": "3.4.23.46",
+    "family": "Protease",
+    "disease": "Alzheimer's Disease",
+    "sequence": "MGAAVE..."
+  }
+]
+
+
