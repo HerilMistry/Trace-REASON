@@ -1,0 +1,25 @@
+reasoning:
+  pipeline:
+    num_nodes: 6
+    nodes:
+      - name: enzyme_identity
+        description: Extract and validate enzyme identity
+      - name: substrate_analysis
+        description: Analyze substrates and binding
+      - name: kinetic_interpretation
+        description: Interpret kinetic parameters
+      - name: mutation_impact
+        description: Analyze mutation effects
+      - name: disease_reasoning
+        description: Connect to disease pathology
+      - name: final_synthesis
+        description: Synthesize complete explanation
+
+  graph_config:
+    max_iterations: 10
+    early_stopping: true
+
+  output:
+    structured: true
+    trace_all_steps: true
+    report_uncertainty: true

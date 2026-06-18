@@ -1,0 +1,19 @@
+embedding:
+  model: facebook/esm2_t6_8M_UR50D
+  device: cuda
+  batch_size: 8
+  cache_dir: outputs/embeddings
+  cache_enabled: true
+
+  mutations:
+    strategy: single_point_mutation
+    types:
+      - benign
+      - moderate
+      - disruptive
+    validation: hydrophobic_conservation
+
+  caching:
+    backend: disk
+    max_size_gb: 10
+    compression: gzip

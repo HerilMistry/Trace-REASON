@@ -1,0 +1,14 @@
+llm:
+  providers:
+    - name: claude
+      model: claude-3-sonnet-20240229
+      temperature: 0.7
+      max_tokens: 2048
+    - name: gpt
+      model: gpt-4-turbo-preview
+      temperature: 0.7
+      max_tokens: 2048
+
+  batch_size: 8
+  timeout_seconds: 60
+  retry_attempts: 3
