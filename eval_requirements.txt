@@ -1,0 +1,23 @@
+# TRACE-Reason Evaluation Harness — Extra Dependencies
+# Install with: pip install -r eval_requirements.txt
+
+# LLM Provider SDKs (free-tier)
+groq>=0.4.0
+google-generativeai>=0.5.0
+mistralai>=1.0.0
+
+# CLI + Display
+rich>=13.0.0
+tabulate>=0.9.0
+
+# Data + Plotting (may already be installed via requirements.txt)
+pandas>=2.1.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+numpy>=1.24.0
+
+# HTTP
+requests>=2.31.0
+
+# Env
+python-dotenv>=1.0.0
