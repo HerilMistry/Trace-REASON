@@ -17,8 +17,7 @@ REPORTS_DIR = os.path.join(OUTPUT_DIR, "reports")
 for d in [EMBEDDING_CACHE_DIR, TRACES_DIR, EXPERIMENTS_DIR, FIGURES_DIR, REPORTS_DIR]:
     os.makedirs(d, exist_ok=True)
 
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "facebook/esm2_t6_8M_UR50D")
 DEVICE = os.getenv("DEVICE", "cuda")

@@ -79,19 +79,24 @@ class ChatResponse:
 # fmt: off
 MODELS: Dict[str, Dict[str, str]] = {
     # ── Groq ──────────────────────────────────────────────────────────────
-    "groq/llama-3.3-70b-versatile":  {"provider": "groq",    "model_id": "llama-3.3-70b-versatile"},
-    "groq/mixtral-8x7b-32768":       {"provider": "groq",    "model_id": "mixtral-8x7b-32768"},
-    "groq/gemma2-9b-it":             {"provider": "groq",    "model_id": "gemma2-9b-it"},
+    "groq/llama-3.3-70b-versatile":         {"provider": "groq",    "model_id": "llama-3.3-70b-versatile"},
+    "groq/llama-4-scout-17b":               {"provider": "groq",    "model_id": "meta-llama/llama-4-scout-17b-16e-instruct"},
     # ── Google Gemini ──────────────────────────────────────────────────────
-    "gemini/gemini-1.5-flash":       {"provider": "gemini",  "model_id": "gemini-1.5-flash"},
-    "gemini/gemini-2.0-flash-lite":  {"provider": "gemini",  "model_id": "gemini-2.0-flash-lite"},
+    "gemini/gemini-2.0-flash":              {"provider": "gemini",  "model_id": "gemini-2.0-flash"},
     # ── Mistral ────────────────────────────────────────────────────────────
-    "mistral/mistral-small-latest":  {"provider": "mistral", "model_id": "mistral-small-latest"},
-    "mistral/open-mistral-7b":       {"provider": "mistral", "model_id": "open-mistral-7b"},
+    "mistral/mistral-small-latest":         {"provider": "mistral", "model_id": "mistral-small-latest"},
 }
 # fmt: on
 
 ALL_MODEL_NAMES: List[str] = list(MODELS.keys())
+
+# Canonical 4-model benchmark set (default for --models all in run_eval.py)
+FOUR_MODEL_NAMES: List[str] = [
+    "groq/llama-3.3-70b-versatile",
+    "groq/llama-4-scout-17b",
+    "gemini/gemini-2.0-flash",
+    "mistral/mistral-small-latest",
+]
 
 # Provider groupings (used for judge rotation)
 PROVIDER_GROUPS: Dict[str, List[str]] = {

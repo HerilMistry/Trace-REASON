@@ -6,11 +6,14 @@ Single entry-point CLI for the TRACE-Reason multi-model evaluation harness.
 
 Usage
 -----
-  # Full evaluation of LRRK2 G2019S across all free-tier models:
+  # Full 4-model evaluation across all 8 questions (default):
   python run_eval.py --enzyme LRRK2 --mutation G2019S
 
+  # Drug active-site questions only (Q6-Q8):
+  python run_eval.py --questions Q6,Q7,Q8
+
   # Quick test with specific models and questions:
-  python run_eval.py --enzyme BACE1 --models groq/gemma2-9b-it --questions Q3
+  python run_eval.py --enzyme BACE1 --models groq/gemma2-9b-it --questions Q6
 
   # Direct-mode (no pipeline, just Q&A):
   python run_eval.py --enzyme GSK3B --mode direct
@@ -18,7 +21,7 @@ Usage
   # Dry-run (validates setup, no API calls):
   python run_eval.py --dry-run
 
-  # Show only specific models:
+  # Override to a specific model subset:
   python run_eval.py --models "groq/llama-3.3-70b-versatile,gemini/gemini-1.5-flash"
 
 Environment Variables Required
@@ -236,10 +239,10 @@ def main() -> None:
         print(f"   Enzyme: {args.enzyme}  |  Mutation: {args.mutation}  |  Mode: {args.mode}\n")
 
     # ── Resolve models ────────────────────────────────────────────────────
-    from eval.model_registry import ALL_MODEL_NAMES, check_api_keys
+    from eval.model_registry import FOUR_MODEL_NAMES, check_api_keys
 
     if args.models == "all":
-        models = ALL_MODEL_NAMES
+        models = FOUR_MODEL_NAMES          # default: canonical 4-model benchmark
     else:
         models = [m.strip() for m in args.models.split(",") if m.strip()]
 
@@ -360,7 +363,7 @@ def main() -> None:
         "enzyme": args.enzyme,
         "mutation": args.mutation,
         "mode": args.mode,
-        "n_questions": len(question_ids) if question_ids else 5,
+        "n_questions": len(question_ids) if question_ids else 8,
         "n_models": len(models),
         "evaluation_time_seconds": round(time.perf_counter() - t_start, 2),
     }

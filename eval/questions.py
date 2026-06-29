@@ -8,8 +8,9 @@ Each EvalQuestion bundles:
   - A pre-built EvidencePackage fixture (hardcoded, no DB/embeddings needed)
   - Metadata (question_id, enzyme, mutation)
 
-Three biological targets are covered: LRRK2, GSK-3β, BACE1.
-Five questions are provided; the harness runs all of them by default.
+Four biological targets are covered: LRRK2, GSK-3β, BACE1, MAO-B.
+Eight questions are provided (Q1-Q5 = kinetics/mutation, Q6-Q8 = drug active-site
+and drug-ability); the harness runs all of them by default.
 """
 
 from __future__ import annotations
@@ -458,6 +459,109 @@ def _build_bace1_evidence() -> EvidencePackage:
 
 
 # ---------------------------------------------------------------------------
+# MAO-B evidence builder (for drug selectivity question)
+# ---------------------------------------------------------------------------
+
+def _build_maob_evidence() -> EvidencePackage:
+    """
+    MAO-B — Monoamine oxidase B
+    Parkinson's Disease | FAD-dependent oxidase | EC 1.4.3.4
+    Degrades dopamine; selective MAO-B inhibitors reduce dopamine catabolism.
+    Active site: Tyr435, Tyr398 (aromatic cage) + FAD cofactor (C4a)
+    """
+    return EvidencePackage(
+        gene_symbol="MAOB",
+        metadata=MetadataInfo(
+            gene_symbol="MAOB",
+            enzyme_name="Amine oxidase [flavin-containing] B",
+            uniprot_id="P27338",
+            ec_number="1.4.3.4",
+        ),
+        disease=DiseaseInfo(
+            indication="Parkinson's Disease",
+            target_form="Overexpressed MAO-B accelerates dopamine catabolism in nigrostriatal neurons",
+            clinical_stage="Approved — Selegiline (Phase 4), Rasagiline (Phase 4), Safinamide (Phase 4)",
+        ),
+        substrates=["Dopamine", "Benzylamine", "β-Phenylethylamine (PEA)", "Tyramine"],
+        products=["3,4-Dihydroxyphenylacetaldehyde (DOPAL) + H₂O₂", "Benzaldehyde + NH₃ + H₂O₂"],
+        cofactors=["FAD (flavin adenine dinucleotide, covalently bound at Cys397)"],
+        pathogenic_variants=[
+            "MAO-B overexpression with age (2-4× increase in striatum)",
+            "rs1799836 A/G SNP — associated with altered MAO-B levels",
+        ],
+        inhibitors=[
+            "Selegiline (IC50 = 0.04 nM, irreversible, propargylamine)",
+            "Rasagiline (IC50 = 0.41 nM, irreversible, propargylamine)",
+            "Safinamide (IC50 = 0.98 nM, reversible)",
+            "Lazabemide (IC50 = 42 nM, reversible, selective)",
+            "Clorgyline (MAO-A selective, not MAO-B)",
+        ],
+        mutation_evidence=[
+            MutationEvidence(
+                position=435,
+                wildtype_aa="Y",
+                mutant_aa="F",
+                mutation_type="moderate",
+                cosine_similarity=0.87,
+                euclidean_distance=0.42,
+                delta_norm=0.35,
+                pathogenic=False,
+            ),
+            MutationEvidence(
+                position=398,
+                wildtype_aa="Y",
+                mutant_aa="L",
+                mutation_type="disruptive",
+                cosine_similarity=0.64,
+                euclidean_distance=0.98,
+                delta_norm=0.88,
+                pathogenic=True,
+            ),
+        ],
+        kinetic_evidence=[
+            KineticEvidence(
+                parameter="Km(dopamine)",
+                value=150.0,
+                unit="µM",
+                note="Michaelis constant for dopamine (MAO-B)",
+            ),
+            KineticEvidence(
+                parameter="kcat",
+                value=1.8,
+                unit="s⁻¹",
+                note="Catalytic turnover for dopamine oxidation",
+            ),
+            KineticEvidence(
+                parameter="Ki(Rasagiline)",
+                value=0.41,
+                unit="nM",
+                note="Irreversible propargylamine — forms covalent adduct with FAD N5",
+            ),
+            KineticEvidence(
+                parameter="Ki(Safinamide)",
+                value=0.98,
+                unit="nM",
+                note="Reversible competitive inhibitor — binds substrate cavity and entrance cavity",
+            ),
+            KineticEvidence(
+                parameter="Active-site cavity volume",
+                value=700.0,
+                unit="Å³",
+                note="MAO-B bipartite cavity (substrate + entrance): larger than MAO-A (490 Å³)",
+            ),
+        ],
+        reaction_evidence=[
+            ReactionEvidence(
+                substrate="Dopamine",
+                product="DOPAL + NH₃ + H₂O₂",
+                cofactor="FAD",
+                reaction_type="Oxidative deamination (FAD-dependent)",
+            ),
+        ],
+    )
+
+
+# ---------------------------------------------------------------------------
 # Question bank
 # ---------------------------------------------------------------------------
 
@@ -466,6 +570,7 @@ def build_question_bank() -> List[EvalQuestion]:
     lrrk2 = _build_lrrk2_evidence()
     gsk3b = _build_gsk3b_evidence()
     bace1 = _build_bace1_evidence()
+    maob  = _build_maob_evidence()
 
     return [
         EvalQuestion(
@@ -528,6 +633,56 @@ def build_question_bank() -> List[EvalQuestion]:
             enzyme="GSK3B",
             mutation=None,
             evidence=gsk3b,
+        ),
+
+        # ── Drug Active-Site & Drug-Ability Questions (Q6-Q8) ───────────────
+
+        EvalQuestion(
+            question_id="Q6",
+            text=(
+                "Describe the BACE1 active-site architecture and explain how its "
+                "catalytic aspartyl dyad (Asp93/Asp289) enables substrate cleavage. "
+                "How do competitive inhibitors like Verubecestat (Ki = 2.2 nM) and "
+                "OM99-2 (Ki = 1.6 nM) exploit the active-site geometry to block APP "
+                "processing? Why did this drug class fail clinically despite picomolar "
+                "potency?"
+            ),
+            enzyme="BACE1",
+            mutation=None,
+            evidence=bace1,
+        ),
+        EvalQuestion(
+            question_id="Q7",
+            text=(
+                "MAO-B inhibitors like Rasagiline and Safinamide are approved for "
+                "Parkinson's Disease but differ fundamentally in their binding mode "
+                "at the active site. Using the kinetic evidence (Ki values, active-site "
+                "cavity volume, FAD cofactor), explain: "
+                "(1) how irreversible propargylamine inhibitors form a covalent adduct "
+                "with FAD-N5 at the active site; "
+                "(2) how reversible inhibitors like Safinamide occupy the substrate "
+                "and entrance cavities; "
+                "(3) what the 700 Å³ bipartite cavity implies about MAO-B drug selectivity "
+                "compared to MAO-A (490 Å³)."
+            ),
+            enzyme="MAOB",
+            mutation=None,
+            evidence=maob,
+        ),
+        EvalQuestion(
+            question_id="Q8",
+            text=(
+                "Compare the drug-ability of three neurological enzyme targets — "
+                "LRRK2 (kinase), BACE1 (aspartyl protease), and MAO-B (FAD-oxidase) "
+                "— using the supplied evidence packages. For each: "
+                "(1) identify the active-site residues or cofactors that drugs exploit; "
+                "(2) state the most potent approved or clinical inhibitor and its IC50/Ki; "
+                "(3) assess why each target succeeded or failed as a drug target based "
+                "on mechanism-of-action and clinical outcome evidence provided."
+            ),
+            enzyme="LRRK2",
+            mutation=None,
+            evidence=lrrk2,
         ),
     ]
 
