@@ -6,6 +6,7 @@ from src.evidence import EvidenceConstructor
 from src.reasoning import ReasoningPipeline
 from src.llm import LLMFactory
 from src.evaluation import EvaluationMetrics, EvaluationResult, AblationStudy
+from src.evaluation.claims import ClaimEvaluator
 
 class MutationAblationExperiment:
     def __init__(self):
@@ -18,14 +19,16 @@ class MutationAblationExperiment:
             self.embedding_encoder,
             self.mutation_gen
         )
-        self.llm = LLMFactory.create_provider("claude")
+        self.llm = LLMFactory.create_provider("groq")
         self.results = []
 
     def run_with_mutations(self, enzyme_name: str):
         evidence = self.evidence_constructor.construct(enzyme_name)
         pipeline = ReasoningPipeline(self.llm)
         trace = pipeline.execute(evidence)
-        metrics = EvaluationMetrics.compute_all_metrics(trace)
+        evaluator = ClaimEvaluator()
+        claim_eval = evaluator.evaluate_explanation(trace.final_explanation, evidence, f"ablation_with_{enzyme_name}")
+        metrics = EvaluationMetrics.compute_all_metrics(trace, claim_eval)
         return metrics
 
     def run_without_mutations(self, enzyme_name: str):
@@ -35,7 +38,9 @@ class MutationAblationExperiment:
         
         pipeline = ReasoningPipeline(self.llm)
         trace = pipeline.execute(evidence)
-        metrics = EvaluationMetrics.compute_all_metrics(trace)
+        evaluator = ClaimEvaluator()
+        claim_eval = evaluator.evaluate_explanation(trace.final_explanation, evidence, f"ablation_without_{enzyme_name}")
+        metrics = EvaluationMetrics.compute_all_metrics(trace, claim_eval)
         return metrics
 
     def run(self, enzyme_names: list = None):
@@ -88,14 +93,16 @@ class NodeAblationExperiment:
             self.embedding_encoder,
             self.mutation_gen
         )
-        self.llm = LLMFactory.create_provider("claude")
+        self.llm = LLMFactory.create_provider("groq")
         self.study = AblationStudy()
 
     def run_baseline_full_pipeline(self, enzyme_name: str):
         evidence = self.evidence_constructor.construct(enzyme_name)
         pipeline = ReasoningPipeline(self.llm)
         trace = pipeline.execute(evidence)
-        metrics = EvaluationMetrics.compute_all_metrics(trace)
+        evaluator = ClaimEvaluator()
+        claim_eval = evaluator.evaluate_explanation(trace.final_explanation, evidence, f"node_ablation_full_{enzyme_name}")
+        metrics = EvaluationMetrics.compute_all_metrics(trace, claim_eval)
         return metrics
 
     def run_without_mutation_node(self, enzyme_name: str):
@@ -104,7 +111,9 @@ class NodeAblationExperiment:
         
         pipeline = ReasoningPipeline(self.llm)
         trace = pipeline.execute(evidence)
-        metrics = EvaluationMetrics.compute_all_metrics(trace)
+        evaluator = ClaimEvaluator()
+        claim_eval = evaluator.evaluate_explanation(trace.final_explanation, evidence, f"node_ablation_no_mut_{enzyme_name}")
+        metrics = EvaluationMetrics.compute_all_metrics(trace, claim_eval)
         return metrics
 
     def run_without_disease_node(self, enzyme_name: str):
@@ -114,7 +123,9 @@ class NodeAblationExperiment:
         
         pipeline = ReasoningPipeline(self.llm)
         trace = pipeline.execute(evidence)
-        metrics = EvaluationMetrics.compute_all_metrics(trace)
+        evaluator = ClaimEvaluator()
+        claim_eval = evaluator.evaluate_explanation(trace.final_explanation, evidence, f"node_ablation_no_dis_{enzyme_name}")
+        metrics = EvaluationMetrics.compute_all_metrics(trace, claim_eval)
         return metrics
 
     def run_without_kinetic_node(self, enzyme_name: str):
@@ -123,7 +134,9 @@ class NodeAblationExperiment:
         
         pipeline = ReasoningPipeline(self.llm)
         trace = pipeline.execute(evidence)
-        metrics = EvaluationMetrics.compute_all_metrics(trace)
+        evaluator = ClaimEvaluator()
+        claim_eval = evaluator.evaluate_explanation(trace.final_explanation, evidence, f"node_ablation_no_kin_{enzyme_name}")
+        metrics = EvaluationMetrics.compute_all_metrics(trace, claim_eval)
         return metrics
 
     def run(self, enzyme_names: list = None):
@@ -146,6 +159,23 @@ class NodeAblationExperiment:
                 
                 no_kinetic = self.run_without_kinetic_node(enzyme)
                 self.study.add_result("Kinetic Node", no_kinetic["grounding_score"], no_kinetic)
+                
+                # Adding No EC Information
+                evidence_no_ec = self.evidence_constructor.construct(enzyme)
+                evidence_no_ec.metadata.ec_number = ""
+                trace_no_ec = ReasoningPipeline(self.llm).execute(evidence_no_ec)
+                claim_no_ec = ClaimEvaluator().evaluate_explanation(trace_no_ec.final_explanation, evidence_no_ec, f"node_ablation_no_ec_{enzyme}")
+                metrics_no_ec = EvaluationMetrics.compute_all_metrics(trace_no_ec, claim_no_ec)
+                self.study.add_result("No EC Info", metrics_no_ec["grounding_score"], metrics_no_ec)
+                
+                # Adding No Disease Metadata
+                evidence_no_dis_meta = self.evidence_constructor.construct(enzyme)
+                evidence_no_dis_meta.disease.clinical_stage = ""
+                evidence_no_dis_meta.disease.target_form = ""
+                trace_no_dis_meta = ReasoningPipeline(self.llm).execute(evidence_no_dis_meta)
+                claim_no_dis_meta = ClaimEvaluator().evaluate_explanation(trace_no_dis_meta.final_explanation, evidence_no_dis_meta, f"node_ablation_no_dis_meta_{enzyme}")
+                metrics_no_dis_meta = EvaluationMetrics.compute_all_metrics(trace_no_dis_meta, claim_no_dis_meta)
+                self.study.add_result("No Disease Metadata", metrics_no_dis_meta["grounding_score"], metrics_no_dis_meta)
                 
             except Exception as e:
                 print(f"Error in node ablation for {enzyme}: {e}")

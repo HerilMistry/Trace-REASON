@@ -1,5 +1,7 @@
 from typing import Dict, List, Any, Optional
 from pydantic import BaseModel, Field
+import json
+import os
 from src.evidence import EvidencePackage
 from src.llm import LLMProvider
 
@@ -30,6 +32,13 @@ class ReasoningTrace(BaseModel):
 
     def get_hallucination_rate(self) -> float:
         return len(self.hallucinations) / self.total_claims if self.total_claims > 0 else 0.0
+
+    def save_trace(self, identifier: str):
+        traces_dir = "outputs/traces"
+        os.makedirs(traces_dir, exist_ok=True)
+        path = os.path.join(traces_dir, f"{identifier}_trace.json")
+        with open(path, "w") as f:
+            f.write(self.json(indent=2))
 
 class ReasoningPipeline:
     def __init__(self, llm_provider: LLMProvider):

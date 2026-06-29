@@ -4,13 +4,17 @@ import numpy as np
 
 class EvaluationMetrics:
     @staticmethod
-    def calculate_faithfulness(trace: ReasoningTrace) -> float:
+    def calculate_faithfulness(trace: ReasoningTrace, claim_eval_result: Dict[str, Any] = None) -> float:
+        if claim_eval_result:
+            return claim_eval_result.get("faithfulness", 0.0)
         if trace.total_claims == 0:
             return 0.0
         return trace.supported_claims / trace.total_claims
 
     @staticmethod
-    def calculate_hallucination_rate(trace: ReasoningTrace) -> float:
+    def calculate_hallucination_rate(trace: ReasoningTrace, claim_eval_result: Dict[str, Any] = None) -> float:
+        if claim_eval_result:
+            return claim_eval_result.get("hallucination_rate", 0.0)
         if trace.total_claims == 0:
             return 0.0
         return len(trace.hallucinations) / trace.total_claims
@@ -76,9 +80,9 @@ class EvaluationMetrics:
         return 1.0 - ece
 
     @staticmethod
-    def compute_all_metrics(trace: ReasoningTrace) -> Dict[str, float]:
-        faithfulness = EvaluationMetrics.calculate_faithfulness(trace)
-        hallucination_rate = EvaluationMetrics.calculate_hallucination_rate(trace)
+    def compute_all_metrics(trace: ReasoningTrace, claim_eval_result: Dict[str, Any] = None) -> Dict[str, float]:
+        faithfulness = EvaluationMetrics.calculate_faithfulness(trace, claim_eval_result)
+        hallucination_rate = EvaluationMetrics.calculate_hallucination_rate(trace, claim_eval_result)
         evidence_utilization = EvaluationMetrics.calculate_evidence_utilization(trace)
         trace_completeness = EvaluationMetrics.calculate_trace_completeness(trace)
         grounding_score = EvaluationMetrics.calculate_grounding_score(faithfulness, evidence_utilization, hallucination_rate)
