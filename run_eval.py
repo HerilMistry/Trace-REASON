@@ -6,14 +6,17 @@ Single entry-point CLI for the TRACE-Reason multi-model evaluation harness.
 
 Usage
 -----
-  # Full 4-model evaluation across all 8 questions (default):
+  # Full 6-model evaluation across all 8 questions (default — includes Qwen):
   python run_eval.py --enzyme LRRK2 --mutation G2019S
 
-  # Drug active-site questions only (Q6-Q8):
+  # Drug active-site questions only (Q6-Q8) with all models incl. Qwen:
   python run_eval.py --questions Q6,Q7,Q8
 
+  # Qwen-only benchmark on Q6-Q8:
+  python run_eval.py --models "qwen/qwen3-32b,qwen/qwen3.6-27b" --questions Q6,Q7,Q8
+
   # Quick test with specific models and questions:
-  python run_eval.py --enzyme BACE1 --models groq/gemma2-9b-it --questions Q6
+  python run_eval.py --enzyme BACE1 --models groq/llama-4-scout-17b --questions Q6
 
   # Direct-mode (no pipeline, just Q&A):
   python run_eval.py --enzyme GSK3B --mode direct
@@ -21,12 +24,9 @@ Usage
   # Dry-run (validates setup, no API calls):
   python run_eval.py --dry-run
 
-  # Override to a specific model subset:
-  python run_eval.py --models "groq/llama-3.3-70b-versatile,gemini/gemini-1.5-flash"
-
 Environment Variables Required
 -------------------------------
-  GROQ_API_KEY       – Groq cloud API key
+  GROQ_API_KEY       – Groq cloud API key (also used for Qwen models)
   GOOGLE_API_KEY     – Google AI Studio / Gemini API key
   MISTRAL_API_KEY    – Mistral La Plateforme API key
 """
@@ -206,6 +206,15 @@ def _parse_args() -> argparse.Namespace:
         "--judge-retries", type=int, default=3,
         help="Max number of judge candidates to try per output (default: 3)",
     )
+    parser.add_argument(
+        "--suite", default=None,
+        help=(
+            "Named benchmark suite from the extended database. "
+            "Overrides --questions. Available: TRACE-Neuro-29, TRACE-Onco-19, "
+            "TRACE-Cardio-8, TRACE-Metabolic-8, TRACE-Immune-11, "
+            "TRACE-Infectious-8, TRACE-Rare-9, TRACE-Full-71"
+        ),
+    )
     return parser.parse_args()
 
 
@@ -239,10 +248,10 @@ def main() -> None:
         print(f"   Enzyme: {args.enzyme}  |  Mutation: {args.mutation}  |  Mode: {args.mode}\n")
 
     # ── Resolve models ────────────────────────────────────────────────────
-    from eval.model_registry import FOUR_MODEL_NAMES, check_api_keys
+    from eval.model_registry import BENCHMARK_MODEL_NAMES, check_api_keys
 
     if args.models == "all":
-        models = FOUR_MODEL_NAMES          # default: canonical 4-model benchmark
+        models = BENCHMARK_MODEL_NAMES      # default: 6-model benchmark (incl. Qwen)
     else:
         models = [m.strip() for m in args.models.split(",") if m.strip()]
 
@@ -254,7 +263,18 @@ def main() -> None:
         print("   Affected models will be skipped automatically.\n")
 
     # ── Resolve questions ─────────────────────────────────────────────────
-    if args.questions == "all":
+    extended_questions = None   # will hold EvalQuestion list if using a suite
+    if args.suite:
+        from eval.question_templates import generate_extended_bank, BENCHMARK_SUITES
+        if args.suite not in BENCHMARK_SUITES:
+            print(f"\n❌ Unknown suite '{args.suite}'. Available:")
+            for s, info in BENCHMARK_SUITES.items():
+                print(f"   {s:25s} — {info['description']}")
+            sys.exit(1)
+        extended_questions = generate_extended_bank(suite=args.suite)
+        question_ids = None
+        print(f"\n🧬 Suite: {args.suite} — {len(extended_questions)} questions from extended database")
+    elif args.questions == "all":
         question_ids = None
     else:
         question_ids = [q.strip() for q in args.questions.split(",") if q.strip()]
@@ -266,8 +286,9 @@ def main() -> None:
     markdown_path = str(output_dir / "eval_summary.md")
     heatmap_path  = str(output_dir / "eval_heatmap.png")
 
+    n_qs = len(extended_questions) if extended_questions else ('all' if question_ids is None else len(question_ids))
     print(f"\n📂 Output directory: {output_dir}")
-    print(f"   Models: {len(models)}  |  Questions: {'all' if question_ids is None else len(question_ids)}\n")
+    print(f"   Models: {len(models)}  |  Questions: {n_qs}\n")
 
     # ── Step 1: Run backbone evaluations ──────────────────────────────────
     print("=" * 60)
@@ -282,6 +303,7 @@ def main() -> None:
         question_ids=question_ids,
         mode=args.mode,
         verbose=True,
+        questions_override=extended_questions,
     )
 
     t_eval = time.perf_counter() - t_start
@@ -326,9 +348,15 @@ def main() -> None:
     from eval.metrics import compute_hallucination_rate, HallucinationReport
     from eval.questions import QUESTION_BY_ID
 
+    # Build question lookup — includes extended questions if using a suite
+    question_lookup = dict(QUESTION_BY_ID)  # start with fixed Q1-Q8
+    if extended_questions:
+        for q in extended_questions:
+            question_lookup[q.question_id] = q
+
     hallucination_reports: List[HallucinationReport] = []
     for rec in eval_records:
-        q = QUESTION_BY_ID.get(rec.question_id)
+        q = question_lookup.get(rec.question_id)
         if q and rec.model_output:
             try:
                 ev_dict = q.evidence.dict()
@@ -359,11 +387,13 @@ def main() -> None:
         print_leaderboard,
     )
 
+    n_total_qs = len(extended_questions) if extended_questions else (len(question_ids) if question_ids else 8)
     meta = {
         "enzyme": args.enzyme,
         "mutation": args.mutation,
         "mode": args.mode,
-        "n_questions": len(question_ids) if question_ids else 8,
+        "suite": args.suite,
+        "n_questions": n_total_qs,
         "n_models": len(models),
         "evaluation_time_seconds": round(time.perf_counter() - t_start, 2),
     }

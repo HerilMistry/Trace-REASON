@@ -3,8 +3,8 @@ import pandas as pd
 import os
 
 def create_excel_report():
-    input_file = "outputs/eval_drug_activesite_v2/eval_report.json"
-    output_file = "outputs/eval_drug_activesite_v2/detailed_eval_report.xlsx"
+    input_file = "outputs/eval_drug_activesite_v3/eval_report.json"
+    output_file = "outputs/eval_drug_activesite_v3/detailed_eval_report.xlsx"
     
     with open(input_file, 'r') as f:
         data = json.load(f)

@@ -310,25 +310,32 @@ def run_evaluation(
     question_ids: Optional[List[str]] = None,
     mode: str = "pipeline",
     verbose: bool = True,
+    questions_override: Optional[List[EvalQuestion]] = None,
 ) -> List[EvalRecord]:
     """
     Run the full evaluation matrix: all (model × question) combinations.
 
     Args:
-        models:       List of model registry keys to evaluate.
-                      Defaults to ALL_MODEL_NAMES.
-        question_ids: List of question IDs (e.g. ['Q1', 'Q3']).
-                      Defaults to all 5 questions.
-        mode:         "pipeline" (full TRACE-Reason pipeline) or
-                      "direct" (single-shot Q&A).
-        verbose:      Print progress to stdout.
+        models:             List of model registry keys to evaluate.
+                            Defaults to ALL_MODEL_NAMES.
+        question_ids:       List of question IDs (e.g. ['Q1', 'Q3']).
+                            Defaults to all questions. Ignored if questions_override is set.
+        mode:               "pipeline" (full TRACE-Reason pipeline) or
+                            "direct" (single-shot Q&A).
+        verbose:            Print progress to stdout.
+        questions_override: Pre-built list of EvalQuestion objects (e.g. from
+                            the extended database template engine). If provided,
+                            question_ids is ignored.
 
     Returns:
         List of EvalRecord, one per (model, question) pair.
     """
     if models is None:
         models = ALL_MODEL_NAMES
-    questions = get_questions(question_ids)
+    if questions_override is not None:
+        questions = questions_override
+    else:
+        questions = get_questions(question_ids)
 
     records: List[EvalRecord] = []
     total = len(models) * len(questions)

@@ -6,6 +6,7 @@ for all supported free-tier LLM providers:
   - Groq  (OpenAI-compatible REST API)
   - Google Gemini (google-generativeai SDK)
   - Mistral (OpenAI-compatible REST API)
+  - Qwen   (via Groq OpenAI-compatible REST API)
 
 All calls are temperature-locked at 0.0 for reproducibility.
 API failures are caught and returned as ChatResponse(success=False).
@@ -78,9 +79,12 @@ class ChatResponse:
 # ---------------------------------------------------------------------------
 # fmt: off
 MODELS: Dict[str, Dict[str, str]] = {
-    # ── Groq ──────────────────────────────────────────────────────────────
+    # ── Groq (LLaMA) ──────────────────────────────────────────────────────
     "groq/llama-3.3-70b-versatile":         {"provider": "groq",    "model_id": "llama-3.3-70b-versatile"},
     "groq/llama-4-scout-17b":               {"provider": "groq",    "model_id": "meta-llama/llama-4-scout-17b-16e-instruct"},
+    # ── Qwen (via Groq OpenAI-compatible endpoint) ─────────────────────────
+    "qwen/qwen3-32b":                       {"provider": "qwen",    "model_id": "qwen/qwen3-32b"},
+    "qwen/qwen3.6-27b":                     {"provider": "qwen",    "model_id": "qwen/qwen3.6-27b"},
     # ── Google Gemini ──────────────────────────────────────────────────────
     "gemini/gemini-2.0-flash":              {"provider": "gemini",  "model_id": "gemini-2.0-flash"},
     # ── Mistral ────────────────────────────────────────────────────────────
@@ -90,7 +94,7 @@ MODELS: Dict[str, Dict[str, str]] = {
 
 ALL_MODEL_NAMES: List[str] = list(MODELS.keys())
 
-# Canonical 4-model benchmark set (default for --models all in run_eval.py)
+# Canonical benchmark set — includes both Qwen models for the Q6-Q8 drug benchmark
 FOUR_MODEL_NAMES: List[str] = [
     "groq/llama-3.3-70b-versatile",
     "groq/llama-4-scout-17b",
@@ -98,9 +102,20 @@ FOUR_MODEL_NAMES: List[str] = [
     "mistral/mistral-small-latest",
 ]
 
+# Extended benchmark set that includes Qwen models (used for Q6-Q8 drug benchmark)
+BENCHMARK_MODEL_NAMES: List[str] = [
+    "groq/llama-3.3-70b-versatile",
+    "groq/llama-4-scout-17b",
+    "qwen/qwen3-32b",
+    "qwen/qwen3.6-27b",
+    "gemini/gemini-2.0-flash",
+    "mistral/mistral-small-latest",
+]
+
 # Provider groupings (used for judge rotation)
 PROVIDER_GROUPS: Dict[str, List[str]] = {
     "groq":    [m for m, v in MODELS.items() if v["provider"] == "groq"],
+    "qwen":    [m for m, v in MODELS.items() if v["provider"] == "qwen"],
     "gemini":  [m for m, v in MODELS.items() if v["provider"] == "gemini"],
     "mistral": [m for m, v in MODELS.items() if v["provider"] == "mistral"],
 }
@@ -270,6 +285,80 @@ def _chat_gemini(
         )
 
 
+def _chat_qwen(
+    model_id: str,
+    messages: List[Dict[str, str]],
+    temperature: float = 0.0,
+    max_tokens: int = 2048,
+) -> ChatResponse:
+    """
+    Call Qwen models via Groq's OpenAI-compatible REST endpoint.
+    Qwen models (qwen/qwen3-32b, qwen/qwen3.6-27b) are served by Groq
+    and share the GROQ_API_KEY — but are tracked separately as 'qwen'
+    for judge-rotation independence from native Groq (LLaMA) models.
+    """
+    api_key = os.getenv("GROQ_API_KEY", "")
+    if not api_key:
+        return ChatResponse(
+            content="", model=model_id, provider="qwen",
+            latency_seconds=0.0, token_count=0, success=False,
+            error="GROQ_API_KEY not set (required for Qwen via Groq)",
+        )
+    t0 = time.perf_counter()
+    try:
+        if _GROQ_SDK:
+            client = GroqClient(api_key=api_key)
+            completion = client.chat.completions.create(
+                model=model_id,
+                messages=messages,
+                temperature=temperature,
+                max_tokens=max_tokens,
+            )
+            content = completion.choices[0].message.content or ""
+            tokens = (
+                completion.usage.completion_tokens
+                if completion.usage
+                else _estimate_tokens(content)
+            )
+        else:
+            # Raw REST fallback
+            resp = requests.post(
+                "https://api.groq.com/openai/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": model_id,
+                    "messages": messages,
+                    "temperature": temperature,
+                    "max_tokens": max_tokens,
+                },
+                timeout=120,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            content = data["choices"][0]["message"]["content"]
+            tokens = data.get("usage", {}).get(
+                "completion_tokens", _estimate_tokens(content)
+            )
+        return ChatResponse(
+            content=content,
+            model=model_id,
+            provider="qwen",
+            latency_seconds=time.perf_counter() - t0,
+            token_count=tokens,
+            success=True,
+        )
+    except Exception as exc:
+        logger.warning("Qwen %s failed: %s", model_id, exc)
+        return ChatResponse(
+            content="", model=model_id, provider="qwen",
+            latency_seconds=time.perf_counter() - t0,
+            token_count=0, success=False, error=str(exc),
+        )
+
+
 def _chat_mistral(
     model_id: str,
     messages: List[Dict[str, str]],
@@ -381,6 +470,8 @@ def chat(
 
     if provider == "groq":
         return _chat_groq(model_id, messages, temperature, max_tokens)
+    elif provider == "qwen":
+        return _chat_qwen(model_id, messages, temperature, max_tokens)
     elif provider == "gemini":
         return _chat_gemini(model_id, messages, temperature, max_tokens)
     elif provider == "mistral":
@@ -438,7 +529,9 @@ def _flatten_messages(messages: List[Dict[str, str]]) -> str:
 def check_api_keys() -> Dict[str, bool]:
     """Return which API keys are configured (non-empty)."""
     return {
-        "GROQ_API_KEY":   bool(os.getenv("GROQ_API_KEY")),
-        "GOOGLE_API_KEY": bool(os.getenv("GOOGLE_API_KEY")),
+        "GROQ_API_KEY":    bool(os.getenv("GROQ_API_KEY")),
+        "GOOGLE_API_KEY":  bool(os.getenv("GOOGLE_API_KEY")),
         "MISTRAL_API_KEY": bool(os.getenv("MISTRAL_API_KEY")),
+        # Qwen models are served via Groq — same key, tracked separately
+        "GROQ_API_KEY (Qwen)": bool(os.getenv("GROQ_API_KEY")),
     }
