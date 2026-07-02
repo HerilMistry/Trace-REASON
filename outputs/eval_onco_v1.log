@@ -1,0 +1,1096 @@
+╭─────────────────────────────────────────────────╮
+│ 🔬 TRACE-Reason Multi-Model Evaluation Harness  │
+│ Enzyme: LRRK2   Mutation: G2019S   Mode: direct │
+╰─────────────────────────────────────────────────╯
+19:34:32 [INFO] eval.question_templates: Using suite TRACE-Onco-19: 19 cancer enzyme targets
+19:34:32 [INFO] eval.db_loader: Loaded 71 enzymes from /home/heril/Trace/Trace-REASON/data/enzyme_drug_target_database_extended.xlsx
+19:34:32 [INFO] eval.question_templates: Generated 56 questions from 19 enzymes (types: ['active_site', 'moa', 'drugability'])
+
+🧬 Suite: TRACE-Onco-19 — 56 questions from extended database
+
+📂 Output directory: /home/heril/Trace/Trace-REASON/outputs/eval_onco_v1
+   Models: 5  |  Questions: 56
+
+============================================================
+STEP 1 / 3 — Running backbone models
+============================================================
+  [  1/280] groq/llama-3.3-70b-versatile             × QAS-001
+         ✓  latency=1.9s  tokens=569
+  [  2/280] groq/llama-3.3-70b-versatile             × QMoA-002
+         ✓  latency=2.1s  tokens=590
+  [  3/280] groq/llama-3.3-70b-versatile             × QDA-003
+         ✓  latency=2.7s  tokens=740
+  [  4/280] groq/llama-3.3-70b-versatile             × QAS-004
+         ✓  latency=1.8s  tokens=565
+  [  5/280] groq/llama-3.3-70b-versatile             × QMoA-005
+         ✓  latency=2.2s  tokens=593
+  [  6/280] groq/llama-3.3-70b-versatile             × QDA-006
+19:34:43 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+         ✓  latency=6.8s  tokens=823
+  [  7/280] groq/llama-3.3-70b-versatile             × QAS-007
+19:34:49 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=4.9s  tokens=458
+  [  8/280] groq/llama-3.3-70b-versatile             × QMoA-008
+19:34:54 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+         ✓  latency=6.3s  tokens=603
+  [  9/280] groq/llama-3.3-70b-versatile             × QDA-009
+19:35:01 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+         ✓  latency=5.6s  tokens=709
+  [ 10/280] groq/llama-3.3-70b-versatile             × QAS-010
+19:35:06 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+         ✓  latency=4.2s  tokens=519
+  [ 11/280] groq/llama-3.3-70b-versatile             × QMoA-011
+19:35:10 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+19:35:12 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+         ✓  latency=5.5s  tokens=627
+  [ 12/280] groq/llama-3.3-70b-versatile             × QDA-012
+19:35:16 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+19:35:18 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+         ✓  latency=5.7s  tokens=692
+  [ 13/280] groq/llama-3.3-70b-versatile             × QAS-013
+19:35:21 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+         ✓  latency=4.0s  tokens=512
+  [ 14/280] groq/llama-3.3-70b-versatile             × QMoA-014
+19:35:25 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.0s  tokens=544
+  [ 15/280] groq/llama-3.3-70b-versatile             × QDA-015
+19:35:30 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+         ✓  latency=4.9s  tokens=741
+  [ 16/280] groq/llama-3.3-70b-versatile             × QAS-016
+19:35:35 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+19:35:38 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+         ✓  latency=6.9s  tokens=526
+  [ 17/280] groq/llama-3.3-70b-versatile             × QMoA-017
+19:35:42 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+         ✓  latency=3.1s  tokens=568
+  [ 18/280] groq/llama-3.3-70b-versatile             × QDA-018
+19:35:45 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.5s  tokens=717
+  [ 19/280] groq/llama-3.3-70b-versatile             × QAS-019
+19:35:51 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.3s  tokens=579
+  [ 20/280] groq/llama-3.3-70b-versatile             × QMoA-020
+19:35:56 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+19:35:58 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+         ✓  latency=5.7s  tokens=675
+  [ 21/280] groq/llama-3.3-70b-versatile             × QDA-021
+19:36:02 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.6s  tokens=719
+  [ 22/280] groq/llama-3.3-70b-versatile             × QAS-022
+19:36:07 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.6s  tokens=619
+  [ 23/280] groq/llama-3.3-70b-versatile             × QMoA-023
+19:36:13 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.4s  tokens=618
+  [ 24/280] groq/llama-3.3-70b-versatile             × QDA-024
+19:36:19 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+         ✓  latency=6.7s  tokens=721
+  [ 25/280] groq/llama-3.3-70b-versatile             × QAS-025
+19:36:25 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+19:36:27 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+         ✓  latency=5.5s  tokens=664
+  [ 26/280] groq/llama-3.3-70b-versatile             × QMoA-026
+19:36:31 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.3s  tokens=621
+  [ 27/280] groq/llama-3.3-70b-versatile             × QDA-027
+19:36:36 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.9s  tokens=814
+  [ 28/280] groq/llama-3.3-70b-versatile             × QAS-028
+19:36:42 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+19:36:45 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+         ✓  latency=6.7s  tokens=645
+  [ 29/280] groq/llama-3.3-70b-versatile             × QMoA-029
+19:36:49 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+         ✓  latency=5.4s  tokens=750
+  [ 30/280] groq/llama-3.3-70b-versatile             × QDA-030
+19:36:54 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.7s  tokens=787
+  [ 31/280] groq/llama-3.3-70b-versatile             × QAS-031
+19:37:00 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.2s  tokens=588
+  [ 32/280] groq/llama-3.3-70b-versatile             × QMoA-032
+19:37:05 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.5s  tokens=581
+  [ 33/280] groq/llama-3.3-70b-versatile             × QDA-033
+19:37:10 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+         ✓  latency=5.1s  tokens=746
+  [ 34/280] groq/llama-3.3-70b-versatile             × QAS-034
+19:37:16 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=6.0s  tokens=746
+  [ 35/280] groq/llama-3.3-70b-versatile             × QMoA-035
+19:37:21 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.2s  tokens=514
+  [ 36/280] groq/llama-3.3-70b-versatile             × QDA-036
+19:37:27 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+         ✓  latency=5.4s  tokens=671
+  [ 37/280] groq/llama-3.3-70b-versatile             × QAS-037
+19:37:32 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+         ✓  latency=4.0s  tokens=529
+  [ 38/280] groq/llama-3.3-70b-versatile             × QMoA-038
+19:37:36 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.7s  tokens=654
+  [ 39/280] groq/llama-3.3-70b-versatile             × QDA-039
+19:37:42 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.3s  tokens=714
+  [ 40/280] groq/llama-3.3-70b-versatile             × QAS-040
+19:37:47 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+         ✓  latency=6.3s  tokens=595
+  [ 41/280] groq/llama-3.3-70b-versatile             × QDA-041
+19:37:53 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.4s  tokens=682
+  [ 42/280] groq/llama-3.3-70b-versatile             × QAS-042
+19:37:59 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.0s  tokens=534
+  [ 43/280] groq/llama-3.3-70b-versatile             × QMoA-043
+19:38:04 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.6s  tokens=648
+  [ 44/280] groq/llama-3.3-70b-versatile             × QDA-044
+19:38:10 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+         ✓  latency=6.6s  tokens=772
+  [ 45/280] groq/llama-3.3-70b-versatile             × QAS-045
+19:38:16 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+         ✓  latency=6.4s  tokens=676
+  [ 46/280] groq/llama-3.3-70b-versatile             × QMoA-046
+19:38:23 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+         ✓  latency=6.8s  tokens=572
+  [ 47/280] groq/llama-3.3-70b-versatile             × QDA-047
+19:38:29 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.4s  tokens=752
+  [ 48/280] groq/llama-3.3-70b-versatile             × QAS-048
+19:38:35 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+         ✓  latency=5.7s  tokens=523
+  [ 49/280] groq/llama-3.3-70b-versatile             × QMoA-049
+19:38:40 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+         ✓  latency=6.1s  tokens=572
+  [ 50/280] groq/llama-3.3-70b-versatile             × QDA-050
+19:38:47 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.3s  tokens=721
+  [ 51/280] groq/llama-3.3-70b-versatile             × QAS-051
+19:38:52 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+         ✓  latency=8.0s  tokens=576
+  [ 52/280] groq/llama-3.3-70b-versatile             × QMoA-052
+19:39:00 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+         ✓  latency=3.8s  tokens=580
+  [ 53/280] groq/llama-3.3-70b-versatile             × QDA-053
+19:39:04 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+         ✓  latency=6.3s  tokens=624
+  [ 54/280] groq/llama-3.3-70b-versatile             × QAS-054
+19:39:10 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+         ✓  latency=6.5s  tokens=614
+  [ 55/280] groq/llama-3.3-70b-versatile             × QMoA-055
+19:39:16 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.7s  tokens=717
+  [ 56/280] groq/llama-3.3-70b-versatile             × QDA-056
+19:39:22 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=5.1s  tokens=621
+  [ 57/280] groq/llama-4-scout-17b                   × QAS-001
+         ✓  latency=2.8s  tokens=669
+  [ 58/280] groq/llama-4-scout-17b                   × QMoA-002
+         ✓  latency=2.3s  tokens=509
+  [ 59/280] groq/llama-4-scout-17b                   × QDA-003
+         ✓  latency=2.9s  tokens=628
+  [ 60/280] groq/llama-4-scout-17b                   × QAS-004
+         ✓  latency=2.5s  tokens=543
+  [ 61/280] groq/llama-4-scout-17b                   × QMoA-005
+         ✓  latency=2.2s  tokens=566
+  [ 62/280] groq/llama-4-scout-17b                   × QDA-006
+         ✓  latency=2.5s  tokens=625
+  [ 63/280] groq/llama-4-scout-17b                   × QAS-007
+         ✓  latency=1.8s  tokens=541
+  [ 64/280] groq/llama-4-scout-17b                   × QMoA-008
+         ✓  latency=2.1s  tokens=656
+  [ 65/280] groq/llama-4-scout-17b                   × QDA-009
+         ✓  latency=2.3s  tokens=539
+  [ 66/280] groq/llama-4-scout-17b                   × QAS-010
+         ✓  latency=4.1s  tokens=553
+  [ 67/280] groq/llama-4-scout-17b                   × QMoA-011
+         ✓  latency=2.2s  tokens=587
+  [ 68/280] groq/llama-4-scout-17b                   × QDA-012
+         ✓  latency=3.3s  tokens=569
+  [ 69/280] groq/llama-4-scout-17b                   × QAS-013
+         ✓  latency=1.9s  tokens=558
+  [ 70/280] groq/llama-4-scout-17b                   × QMoA-014
+         ✓  latency=2.5s  tokens=681
+  [ 71/280] groq/llama-4-scout-17b                   × QDA-015
+         ✓  latency=5.2s  tokens=571
+  [ 72/280] groq/llama-4-scout-17b                   × QAS-016
+         ✓  latency=3.1s  tokens=689
+  [ 73/280] groq/llama-4-scout-17b                   × QMoA-017
+         ✓  latency=1.8s  tokens=480
+  [ 74/280] groq/llama-4-scout-17b                   × QDA-018
+         ✓  latency=3.4s  tokens=751
+  [ 75/280] groq/llama-4-scout-17b                   × QAS-019
+         ✓  latency=2.1s  tokens=618
+  [ 76/280] groq/llama-4-scout-17b                   × QMoA-020
+         ✓  latency=3.3s  tokens=494
+  [ 77/280] groq/llama-4-scout-17b                   × QDA-021
+         ✓  latency=5.4s  tokens=790
+  [ 78/280] groq/llama-4-scout-17b                   × QAS-022
+         ✓  latency=2.4s  tokens=556
+  [ 79/280] groq/llama-4-scout-17b                   × QMoA-023
+         ✓  latency=3.6s  tokens=663
+  [ 80/280] groq/llama-4-scout-17b                   × QDA-024
+         ✓  latency=2.8s  tokens=603
+  [ 81/280] groq/llama-4-scout-17b                   × QAS-025
+         ✓  latency=2.5s  tokens=542
+  [ 82/280] groq/llama-4-scout-17b                   × QMoA-026
+         ✓  latency=3.0s  tokens=669
+  [ 83/280] groq/llama-4-scout-17b                   × QDA-027
+         ✓  latency=1.7s  tokens=513
+  [ 84/280] groq/llama-4-scout-17b                   × QAS-028
+         ✓  latency=3.0s  tokens=517
+  [ 85/280] groq/llama-4-scout-17b                   × QMoA-029
+         ✓  latency=1.9s  tokens=535
+  [ 86/280] groq/llama-4-scout-17b                   × QDA-030
+         ✓  latency=2.5s  tokens=660
+  [ 87/280] groq/llama-4-scout-17b                   × QAS-031
+         ✓  latency=1.9s  tokens=575
+  [ 88/280] groq/llama-4-scout-17b                   × QMoA-032
+         ✓  latency=1.7s  tokens=588
+  [ 89/280] groq/llama-4-scout-17b                   × QDA-033
+         ✓  latency=6.2s  tokens=651
+  [ 90/280] groq/llama-4-scout-17b                   × QAS-034
+         ✓  latency=4.4s  tokens=586
+  [ 91/280] groq/llama-4-scout-17b                   × QMoA-035
+         ✓  latency=2.3s  tokens=680
+  [ 92/280] groq/llama-4-scout-17b                   × QDA-036
+         ✓  latency=3.1s  tokens=528
+  [ 93/280] groq/llama-4-scout-17b                   × QAS-037
+         ✓  latency=4.8s  tokens=465
+  [ 94/280] groq/llama-4-scout-17b                   × QMoA-038
+         ✓  latency=1.8s  tokens=518
+  [ 95/280] groq/llama-4-scout-17b                   × QDA-039
+         ✓  latency=4.1s  tokens=628
+  [ 96/280] groq/llama-4-scout-17b                   × QAS-040
+         ✓  latency=2.6s  tokens=606
+  [ 97/280] groq/llama-4-scout-17b                   × QDA-041
+         ✓  latency=1.9s  tokens=590
+  [ 98/280] groq/llama-4-scout-17b                   × QAS-042
+         ✓  latency=2.2s  tokens=621
+  [ 99/280] groq/llama-4-scout-17b                   × QMoA-043
+         ✓  latency=2.8s  tokens=709
+  [100/280] groq/llama-4-scout-17b                   × QDA-044
+         ✓  latency=1.7s  tokens=604
+  [101/280] groq/llama-4-scout-17b                   × QAS-045
+         ✓  latency=1.7s  tokens=566
+  [102/280] groq/llama-4-scout-17b                   × QMoA-046
+         ✓  latency=2.1s  tokens=709
+  [103/280] groq/llama-4-scout-17b                   × QDA-047
+         ✓  latency=2.4s  tokens=751
+  [104/280] groq/llama-4-scout-17b                   × QAS-048
+         ✓  latency=2.3s  tokens=587
+  [105/280] groq/llama-4-scout-17b                   × QMoA-049
+         ✓  latency=2.2s  tokens=768
+  [106/280] groq/llama-4-scout-17b                   × QDA-050
+         ✓  latency=1.9s  tokens=579
+  [107/280] groq/llama-4-scout-17b                   × QAS-051
+         ✓  latency=2.0s  tokens=596
+  [108/280] groq/llama-4-scout-17b                   × QMoA-052
+         ✓  latency=2.3s  tokens=685
+  [109/280] groq/llama-4-scout-17b                   × QDA-053
+         ✓  latency=2.0s  tokens=561
+  [110/280] groq/llama-4-scout-17b                   × QAS-054
+         ✓  latency=3.4s  tokens=610
+  [111/280] groq/llama-4-scout-17b                   × QMoA-055
+         ✓  latency=2.1s  tokens=650
+  [112/280] groq/llama-4-scout-17b                   × QDA-056
+         ✓  latency=2.2s  tokens=639
+  [113/280] qwen/qwen3-32b                           × QAS-001
+         ✓  latency=3.8s  tokens=1565
+  [114/280] qwen/qwen3-32b                           × QMoA-002
+19:42:02 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+         ✓  latency=8.9s  tokens=1975
+  [115/280] qwen/qwen3-32b                           × QDA-003
+19:42:11 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 22.000000 seconds
+19:42:33 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+         ✓  latency=30.0s  tokens=1890
+  [116/280] qwen/qwen3-32b                           × QAS-004
+19:42:41 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+19:42:56 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+19:42:59 [WARNING] eval.model_registry: Qwen qwen/qwen3-32b failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3-32b` in organization `org_01k9ay5jctexk9bhtjvwn6kdy2` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 3608, Requested 2393. Please try again in 10ms. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+         ✗  latency=18.3s  tokens=0
+  [117/280] qwen/qwen3-32b                           × QMoA-005
+         ✓  latency=3.9s  tokens=1760
+  [118/280] qwen/qwen3-32b                           × QDA-006
+19:43:03 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 20.000000 seconds
+         ✓  latency=26.4s  tokens=2048
+  [119/280] qwen/qwen3-32b                           × QAS-007
+19:43:30 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 18.000000 seconds
+         ✓  latency=22.3s  tokens=1331
+  [120/280] qwen/qwen3-32b                           × QMoA-008
+19:43:52 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 13.000000 seconds
+         ✓  latency=18.1s  tokens=2048
+  [121/280] qwen/qwen3-32b                           × QDA-009
+19:44:10 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 19.000000 seconds
+19:44:29 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+         ✓  latency=24.6s  tokens=1875
+  [122/280] qwen/qwen3-32b                           × QAS-010
+19:44:35 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 18.000000 seconds
+         ✓  latency=22.0s  tokens=1647
+  [123/280] qwen/qwen3-32b                           × QMoA-011
+19:44:57 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+19:45:12 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+         ✓  latency=20.6s  tokens=2048
+  [124/280] qwen/qwen3-32b                           × QDA-012
+19:45:17 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 25.000000 seconds
+         ✓  latency=31.3s  tokens=2048
+  [125/280] qwen/qwen3-32b                           × QAS-013
+19:45:49 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+19:46:05 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+         ✓  latency=22.6s  tokens=1541
+  [126/280] qwen/qwen3-32b                           × QMoA-014
+19:46:11 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.5s  tokens=2048
+  [127/280] qwen/qwen3-32b                           × QDA-015
+19:46:31 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 20.000000 seconds
+         ✓  latency=27.9s  tokens=2019
+  [128/280] qwen/qwen3-32b                           × QAS-016
+19:46:59 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 17.000000 seconds
+         ✓  latency=22.0s  tokens=1558
+  [129/280] qwen/qwen3-32b                           × QMoA-017
+19:47:21 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.3s  tokens=1708
+  [130/280] qwen/qwen3-32b                           × QDA-018
+19:47:40 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 17.000000 seconds
+         ✓  latency=21.2s  tokens=1509
+  [131/280] qwen/qwen3-32b                           × QAS-019
+19:48:01 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.8s  tokens=1426
+  [132/280] qwen/qwen3-32b                           × QMoA-020
+19:48:20 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.0s  tokens=1762
+  [133/280] qwen/qwen3-32b                           × QDA-021
+19:48:38 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 17.000000 seconds
+         ✓  latency=27.0s  tokens=1764
+  [134/280] qwen/qwen3-32b                           × QAS-022
+19:49:05 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 13.000000 seconds
+         ✓  latency=17.7s  tokens=1628
+  [135/280] qwen/qwen3-32b                           × QMoA-023
+19:49:23 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 17.000000 seconds
+         ✓  latency=21.7s  tokens=2048
+  [136/280] qwen/qwen3-32b                           × QDA-024
+19:49:44 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 21.000000 seconds
+         ✓  latency=25.0s  tokens=1569
+  [137/280] qwen/qwen3-32b                           × QAS-025
+19:50:09 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=19.6s  tokens=1513
+  [138/280] qwen/qwen3-32b                           × QMoA-026
+19:50:29 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=19.9s  tokens=1673
+  [139/280] qwen/qwen3-32b                           × QDA-027
+19:50:49 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 17.000000 seconds
+         ✓  latency=23.7s  tokens=1858
+  [140/280] qwen/qwen3-32b                           × QAS-028
+19:51:13 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 17.000000 seconds
+         ✓  latency=22.9s  tokens=2029
+  [141/280] qwen/qwen3-32b                           × QMoA-029
+19:51:36 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 19.000000 seconds
+         ✓  latency=23.9s  tokens=1608
+  [142/280] qwen/qwen3-32b                           × QDA-030
+19:52:00 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=18.9s  tokens=1643
+  [143/280] qwen/qwen3-32b                           × QAS-031
+19:52:18 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 17.000000 seconds
+         ✓  latency=21.3s  tokens=1679
+  [144/280] qwen/qwen3-32b                           × QMoA-032
+19:52:40 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=21.7s  tokens=2048
+  [145/280] qwen/qwen3-32b                           × QDA-033
+19:53:01 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 19.000000 seconds
+         ✓  latency=22.8s  tokens=1558
+  [146/280] qwen/qwen3-32b                           × QAS-034
+19:53:24 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.7s  tokens=2036
+  [147/280] qwen/qwen3-32b                           × QMoA-035
+19:53:44 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 20.000000 seconds
+         ✓  latency=24.9s  tokens=2048
+  [148/280] qwen/qwen3-32b                           × QDA-036
+19:54:09 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 20.000000 seconds
+         ✓  latency=24.8s  tokens=1668
+  [149/280] qwen/qwen3-32b                           × QAS-037
+19:54:34 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=19.6s  tokens=1505
+  [150/280] qwen/qwen3-32b                           × QMoA-038
+19:54:53 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=20.8s  tokens=2048
+  [151/280] qwen/qwen3-32b                           × QDA-039
+19:55:14 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 20.000000 seconds
+         ✓  latency=23.5s  tokens=1526
+  [152/280] qwen/qwen3-32b                           × QAS-040
+19:55:37 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 17.000000 seconds
+         ✓  latency=26.3s  tokens=1883
+  [153/280] qwen/qwen3-32b                           × QDA-041
+19:56:04 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=23.2s  tokens=2006
+  [154/280] qwen/qwen3-32b                           × QAS-042
+19:56:27 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=20.2s  tokens=1725
+  [155/280] qwen/qwen3-32b                           × QMoA-043
+19:56:47 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 19.000000 seconds
+         ✓  latency=23.9s  tokens=2048
+  [156/280] qwen/qwen3-32b                           × QDA-044
+19:57:11 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 22.000000 seconds
+         ✓  latency=27.0s  tokens=1976
+  [157/280] qwen/qwen3-32b                           × QAS-045
+19:57:38 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 20.000000 seconds
+         ✓  latency=23.7s  tokens=1506
+  [158/280] qwen/qwen3-32b                           × QMoA-046
+19:58:02 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 18.000000 seconds
+         ✓  latency=23.0s  tokens=2048
+  [159/280] qwen/qwen3-32b                           × QDA-047
+19:58:25 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 21.000000 seconds
+         ✓  latency=26.2s  tokens=2048
+  [160/280] qwen/qwen3-32b                           × QAS-048
+19:58:51 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 21.000000 seconds
+         ✓  latency=26.0s  tokens=2048
+  [161/280] qwen/qwen3-32b                           × QMoA-049
+19:59:17 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 22.000000 seconds
+         ✓  latency=26.8s  tokens=2048
+  [162/280] qwen/qwen3-32b                           × QDA-050
+19:59:44 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 21.000000 seconds
+         ✓  latency=25.4s  tokens=1708
+  [163/280] qwen/qwen3-32b                           × QAS-051
+20:00:09 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 19.000000 seconds
+         ✓  latency=23.6s  tokens=1731
+  [164/280] qwen/qwen3-32b                           × QMoA-052
+20:00:33 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 18.000000 seconds
+         ✓  latency=23.9s  tokens=1898
+  [165/280] qwen/qwen3-32b                           × QDA-053
+20:00:56 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 20.000000 seconds
+         ✓  latency=25.1s  tokens=1816
+  [166/280] qwen/qwen3-32b                           × QAS-054
+20:01:22 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 18.000000 seconds
+         ✓  latency=23.7s  tokens=1524
+  [167/280] qwen/qwen3-32b                           × QMoA-055
+20:01:45 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=17.0s  tokens=1224
+  [168/280] qwen/qwen3-32b                           × QDA-056
+20:02:02 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.6s  tokens=1696
+  [169/280] qwen/qwen3.6-27b                         × QAS-001
+         ✓  latency=4.4s  tokens=2048
+  [170/280] qwen/qwen3.6-27b                         × QMoA-002
+         ✓  latency=4.3s  tokens=2048
+  [171/280] qwen/qwen3.6-27b                         × QDA-003
+20:02:31 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+         ✓  latency=10.4s  tokens=2048
+  [172/280] qwen/qwen3.6-27b                         × QAS-004
+20:02:41 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 19.000000 seconds
+         ✓  latency=23.4s  tokens=2048
+  [173/280] qwen/qwen3.6-27b                         × QMoA-005
+20:03:04 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.3s  tokens=2048
+  [174/280] qwen/qwen3.6-27b                         × QDA-006
+20:03:23 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.3s  tokens=2048
+  [175/280] qwen/qwen3.6-27b                         × QAS-007
+20:03:41 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.4s  tokens=2048
+  [176/280] qwen/qwen3.6-27b                         × QMoA-008
+20:04:00 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 19.000000 seconds
+         ✓  latency=23.5s  tokens=2048
+  [177/280] qwen/qwen3.6-27b                         × QDA-009
+20:04:24 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.4s  tokens=2048
+  [178/280] qwen/qwen3.6-27b                         × QAS-010
+20:04:42 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.4s  tokens=2048
+  [179/280] qwen/qwen3.6-27b                         × QMoA-011
+20:05:01 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.3s  tokens=2048
+  [180/280] qwen/qwen3.6-27b                         × QDA-012
+20:05:19 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.4s  tokens=2048
+  [181/280] qwen/qwen3.6-27b                         × QAS-013
+20:05:37 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.4s  tokens=2048
+  [182/280] qwen/qwen3.6-27b                         × QMoA-014
+20:05:56 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.3s  tokens=2048
+  [183/280] qwen/qwen3.6-27b                         × QDA-015
+20:06:14 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.4s  tokens=2048
+  [184/280] qwen/qwen3.6-27b                         × QAS-016
+20:06:33 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.3s  tokens=2048
+  [185/280] qwen/qwen3.6-27b                         × QMoA-017
+20:06:51 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.6s  tokens=2048
+  [186/280] qwen/qwen3.6-27b                         × QDA-018
+20:07:10 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.4s  tokens=2048
+  [187/280] qwen/qwen3.6-27b                         × QAS-019
+20:07:29 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.2s  tokens=2048
+  [188/280] qwen/qwen3.6-27b                         × QMoA-020
+20:07:47 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.6s  tokens=2048
+  [189/280] qwen/qwen3.6-27b                         × QDA-021
+20:08:06 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.3s  tokens=2048
+  [190/280] qwen/qwen3.6-27b                         × QAS-022
+20:08:24 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.3s  tokens=2048
+  [191/280] qwen/qwen3.6-27b                         × QMoA-023
+20:08:43 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.4s  tokens=2048
+  [192/280] qwen/qwen3.6-27b                         × QDA-024
+20:09:03 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.2s  tokens=2048
+  [193/280] qwen/qwen3.6-27b                         × QAS-025
+20:09:22 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.3s  tokens=2048
+  [194/280] qwen/qwen3.6-27b                         × QMoA-026
+20:09:40 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.4s  tokens=2048
+  [195/280] qwen/qwen3.6-27b                         × QDA-027
+20:09:59 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.2s  tokens=2048
+  [196/280] qwen/qwen3.6-27b                         × QAS-028
+20:10:18 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.3s  tokens=2048
+  [197/280] qwen/qwen3.6-27b                         × QMoA-029
+20:10:37 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.3s  tokens=2048
+  [198/280] qwen/qwen3.6-27b                         × QDA-030
+20:10:55 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.2s  tokens=2048
+  [199/280] qwen/qwen3.6-27b                         × QAS-031
+20:11:15 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.2s  tokens=2048
+  [200/280] qwen/qwen3.6-27b                         × QMoA-032
+20:11:33 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.2s  tokens=2048
+  [201/280] qwen/qwen3.6-27b                         × QDA-033
+20:11:51 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.3s  tokens=2048
+  [202/280] qwen/qwen3.6-27b                         × QAS-034
+20:12:09 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.3s  tokens=2048
+  [203/280] qwen/qwen3.6-27b                         × QMoA-035
+20:12:28 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.3s  tokens=2048
+  [204/280] qwen/qwen3.6-27b                         × QDA-036
+20:12:46 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.4s  tokens=2048
+  [205/280] qwen/qwen3.6-27b                         × QAS-037
+20:13:04 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.2s  tokens=2048
+  [206/280] qwen/qwen3.6-27b                         × QMoA-038
+20:13:23 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.3s  tokens=2048
+  [207/280] qwen/qwen3.6-27b                         × QDA-039
+20:13:42 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.2s  tokens=2048
+  [208/280] qwen/qwen3.6-27b                         × QAS-040
+20:14:01 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 14.000000 seconds
+         ✓  latency=18.2s  tokens=2048
+  [209/280] qwen/qwen3.6-27b                         × QDA-041
+20:14:19 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.3s  tokens=2048
+  [210/280] qwen/qwen3.6-27b                         × QAS-042
+20:14:38 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=20.3s  tokens=2048
+  [211/280] qwen/qwen3.6-27b                         × QMoA-043
+20:14:59 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.3s  tokens=2048
+  [212/280] qwen/qwen3.6-27b                         × QDA-044
+20:15:18 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.2s  tokens=2048
+  [213/280] qwen/qwen3.6-27b                         × QAS-045
+20:15:37 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=20.3s  tokens=2048
+  [214/280] qwen/qwen3.6-27b                         × QMoA-046
+20:15:58 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=20.3s  tokens=2048
+  [215/280] qwen/qwen3.6-27b                         × QDA-047
+20:16:18 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=20.3s  tokens=2048
+  [216/280] qwen/qwen3.6-27b                         × QAS-048
+20:16:38 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.2s  tokens=2048
+  [217/280] qwen/qwen3.6-27b                         × QMoA-049
+20:16:57 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=20.3s  tokens=2048
+  [218/280] qwen/qwen3.6-27b                         × QDA-050
+20:17:18 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.4s  tokens=2048
+  [219/280] qwen/qwen3.6-27b                         × QAS-051
+20:17:37 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=20.3s  tokens=2048
+  [220/280] qwen/qwen3.6-27b                         × QMoA-052
+20:17:57 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.3s  tokens=2048
+  [221/280] qwen/qwen3.6-27b                         × QDA-053
+20:18:17 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 16.000000 seconds
+         ✓  latency=20.4s  tokens=2048
+  [222/280] qwen/qwen3.6-27b                         × QAS-054
+20:18:37 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.3s  tokens=2048
+  [223/280] qwen/qwen3.6-27b                         × QMoA-055
+20:18:56 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.2s  tokens=2048
+  [224/280] qwen/qwen3.6-27b                         × QDA-056
+20:19:16 [INFO] groq._base_client: Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+         ✓  latency=19.3s  tokens=2048
+  [225/280] mistral/mistral-small-latest             × QAS-001
+         ✓  latency=7.6s  tokens=1165
+  [226/280] mistral/mistral-small-latest             × QMoA-002
+         ✓  latency=7.9s  tokens=1254
+  [227/280] mistral/mistral-small-latest             × QDA-003
+         ✓  latency=11.0s  tokens=1619
+  [228/280] mistral/mistral-small-latest             × QAS-004
+         ✓  latency=6.7s  tokens=920
+  [229/280] mistral/mistral-small-latest             × QMoA-005
+         ✓  latency=6.6s  tokens=1043
+  [230/280] mistral/mistral-small-latest             × QDA-006
+         ✓  latency=7.0s  tokens=1047
+  [231/280] mistral/mistral-small-latest             × QAS-007
+         ✓  latency=5.1s  tokens=757
+  [232/280] mistral/mistral-small-latest             × QMoA-008
+         ✓  latency=8.3s  tokens=1219
+  [233/280] mistral/mistral-small-latest             × QDA-009
+         ✓  latency=8.0s  tokens=1154
+  [234/280] mistral/mistral-small-latest             × QAS-010
+         ✓  latency=8.3s  tokens=1267
+  [235/280] mistral/mistral-small-latest             × QMoA-011
+         ✓  latency=8.9s  tokens=1344
+  [236/280] mistral/mistral-small-latest             × QDA-012
+         ✓  latency=10.3s  tokens=1530
+  [237/280] mistral/mistral-small-latest             × QAS-013
+         ✓  latency=6.0s  tokens=835
+  [238/280] mistral/mistral-small-latest             × QMoA-014
+         ✓  latency=8.2s  tokens=1270
+  [239/280] mistral/mistral-small-latest             × QDA-015
+         ✓  latency=7.6s  tokens=1075
+  [240/280] mistral/mistral-small-latest             × QAS-016
+         ✓  latency=7.8s  tokens=1265
+  [241/280] mistral/mistral-small-latest             × QMoA-017
+         ✓  latency=8.6s  tokens=1354
+  [242/280] mistral/mistral-small-latest             × QDA-018
+         ✓  latency=10.5s  tokens=1556
+  [243/280] mistral/mistral-small-latest             × QAS-019
+         ✓  latency=5.7s  tokens=848
+  [244/280] mistral/mistral-small-latest             × QMoA-020
+         ✓  latency=7.3s  tokens=1142
+  [245/280] mistral/mistral-small-latest             × QDA-021
+         ✓  latency=9.7s  tokens=1439
+  [246/280] mistral/mistral-small-latest             × QAS-022
+         ✓  latency=6.9s  tokens=1091
+  [247/280] mistral/mistral-small-latest             × QMoA-023
+         ✓  latency=5.8s  tokens=879
+  [248/280] mistral/mistral-small-latest             × QDA-024
+         ✓  latency=10.5s  tokens=1166
+  [249/280] mistral/mistral-small-latest             × QAS-025
+         ✓  latency=8.1s  tokens=1288
+  [250/280] mistral/mistral-small-latest             × QMoA-026
+         ✓  latency=9.5s  tokens=1223
+  [251/280] mistral/mistral-small-latest             × QDA-027
+         ✓  latency=8.9s  tokens=1380
+  [252/280] mistral/mistral-small-latest             × QAS-028
+         ✓  latency=7.2s  tokens=1140
+  [253/280] mistral/mistral-small-latest             × QMoA-029
+         ✓  latency=5.5s  tokens=768
+  [254/280] mistral/mistral-small-latest             × QDA-030
+         ✓  latency=7.4s  tokens=1132
+  [255/280] mistral/mistral-small-latest             × QAS-031
+         ✓  latency=5.1s  tokens=739
+  [256/280] mistral/mistral-small-latest             × QMoA-032
+         ✓  latency=5.4s  tokens=790
+  [257/280] mistral/mistral-small-latest             × QDA-033
+         ✓  latency=7.1s  tokens=1002
+  [258/280] mistral/mistral-small-latest             × QAS-034
+         ✓  latency=7.3s  tokens=1118
+  [259/280] mistral/mistral-small-latest             × QMoA-035
+         ✓  latency=6.8s  tokens=1021
+  [260/280] mistral/mistral-small-latest             × QDA-036
+         ✓  latency=8.3s  tokens=1116
+  [261/280] mistral/mistral-small-latest             × QAS-037
+         ✓  latency=8.2s  tokens=1261
+  [262/280] mistral/mistral-small-latest             × QMoA-038
+         ✓  latency=7.7s  tokens=1193
+  [263/280] mistral/mistral-small-latest             × QDA-039
+         ✓  latency=10.0s  tokens=1419
+  [264/280] mistral/mistral-small-latest             × QAS-040
+         ✓  latency=10.7s  tokens=1614
+  [265/280] mistral/mistral-small-latest             × QDA-041
+         ✓  latency=11.9s  tokens=1770
+  [266/280] mistral/mistral-small-latest             × QAS-042
+         ✓  latency=6.3s  tokens=957
+  [267/280] mistral/mistral-small-latest             × QMoA-043
+         ✓  latency=13.0s  tokens=1442
+  [268/280] mistral/mistral-small-latest             × QDA-044
+         ✓  latency=6.2s  tokens=896
+  [269/280] mistral/mistral-small-latest             × QAS-045
+         ✓  latency=6.9s  tokens=1073
+  [270/280] mistral/mistral-small-latest             × QMoA-046
+         ✓  latency=6.6s  tokens=1103
+  [271/280] mistral/mistral-small-latest             × QDA-047
+         ✓  latency=7.0s  tokens=1070
+  [272/280] mistral/mistral-small-latest             × QAS-048
+         ✓  latency=6.5s  tokens=1053
+  [273/280] mistral/mistral-small-latest             × QMoA-049
+         ✓  latency=7.2s  tokens=1124
+  [274/280] mistral/mistral-small-latest             × QDA-050
+         ✓  latency=7.3s  tokens=1069
+  [275/280] mistral/mistral-small-latest             × QAS-051
+         ✓  latency=8.3s  tokens=1307
+  [276/280] mistral/mistral-small-latest             × QMoA-052
+         ✓  latency=9.9s  tokens=1579
+  [277/280] mistral/mistral-small-latest             × QDA-053
+         ✓  latency=12.4s  tokens=1914
+  [278/280] mistral/mistral-small-latest             × QAS-054
+         ✓  latency=7.5s  tokens=1105
+  [279/280] mistral/mistral-small-latest             × QMoA-055
+         ✓  latency=8.6s  tokens=1329
+  [280/280] mistral/mistral-small-latest             × QDA-056
+         ✓  latency=8.6s  tokens=1280
+/home/heril/Trace/Trace-REASON/run_eval.py:362: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+  ev_dict = q.evidence.dict()
+
+  ✓ Done — 279/280 calls succeeded in 3150.8s
+
+============================================================
+STEP 2 / 3 — LLM judge scoring
+============================================================
+  (skipped — --skip-judge flag set)
+
+============================================================
+STEP 3 / 3 — Computing hallucination metrics
+============================================================
+  groq/llama-3.3-70b-versatile             × QAS-001  claims= 12  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-002  claims= 12  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-003  claims= 19  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-004  claims= 11  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-005  claims= 14  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-006  claims= 20  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-007  claims= 15  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-008  claims= 19  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-009  claims= 19  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-010  claims= 13  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-011  claims= 11  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-012  claims= 19  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-013  claims= 13  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-014  claims= 13  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-015  claims= 16  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-016  claims= 14  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-017  claims=  9  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-018  claims= 20  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-019  claims= 11  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-020  claims= 14  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-021  claims= 21  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-022  claims=  8  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-023  claims= 16  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-024  claims= 11  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-025  claims= 16  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-026  claims=  9  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-027  claims= 20  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-028  claims= 13  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-029  claims= 13  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-030  claims= 17  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-031  claims= 12  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-032  claims= 11  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-033  claims= 17  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-034  claims= 13  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-035  claims= 13  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-036  claims= 15  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-037  claims= 14  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-038  claims= 13  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-039  claims= 19  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-040  claims= 15  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-041  claims= 16  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-042  claims= 15  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-043  claims= 13  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-044  claims= 18  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-045  claims= 11  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-046  claims= 13  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-047  claims= 21  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-048  claims=  9  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-049  claims= 10  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-050  claims= 18  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-051  claims= 12  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-052  claims= 13  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-053  claims= 14  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QAS-054  claims= 14  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QMoA-055  claims= 12  halluc=0.000
+  groq/llama-3.3-70b-versatile             × QDA-056  claims= 16  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-001  claims=  8  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-002  claims= 15  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-003  claims= 15  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-004  claims=  9  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-005  claims= 17  halluc=0.059
+  groq/llama-4-scout-17b                   × QDA-006  claims= 16  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-007  claims=  8  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-008  claims= 18  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-009  claims= 10  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-010  claims= 11  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-011  claims= 13  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-012  claims= 13  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-013  claims= 16  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-014  claims= 18  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-015  claims=  6  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-016  claims= 11  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-017  claims= 15  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-018  claims= 16  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-019  claims= 19  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-020  claims= 17  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-021  claims=  8  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-022  claims=  7  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-023  claims= 20  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-024  claims= 12  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-025  claims=  7  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-026  claims= 21  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-027  claims= 11  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-028  claims= 16  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-029  claims= 14  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-030  claims= 14  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-031  claims= 17  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-032  claims= 17  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-033  claims= 19  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-034  claims= 18  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-035  claims= 19  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-036  claims=  7  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-037  claims= 13  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-038  claims= 15  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-039  claims=  7  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-040  claims= 15  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-041  claims=  8  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-042  claims= 12  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-043  claims= 19  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-044  claims= 13  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-045  claims= 15  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-046  claims= 14  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-047  claims=  6  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-048  claims= 12  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-049  claims= 20  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-050  claims= 11  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-051  claims= 18  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-052  claims= 17  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-053  claims=  8  halluc=0.000
+  groq/llama-4-scout-17b                   × QAS-054  claims= 19  halluc=0.000
+  groq/llama-4-scout-17b                   × QMoA-055  claims= 16  halluc=0.000
+  groq/llama-4-scout-17b                   × QDA-056  claims=  8  halluc=0.000
+  qwen/qwen3-32b                           × QAS-001  claims= 45  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-002  claims= 55  halluc=0.000
+  qwen/qwen3-32b                           × QDA-003  claims= 58  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-005  claims= 42  halluc=0.000
+  qwen/qwen3-32b                           × QDA-006  claims= 55  halluc=0.000
+  qwen/qwen3-32b                           × QAS-007  claims= 42  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-008  claims= 95  halluc=0.000
+  qwen/qwen3-32b                           × QDA-009  claims= 57  halluc=0.000
+  qwen/qwen3-32b                           × QAS-010  claims= 51  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-011  claims=103  halluc=0.000
+  qwen/qwen3-32b                           × QDA-012  claims= 65  halluc=0.000
+  qwen/qwen3-32b                           × QAS-013  claims= 44  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-014  claims=107  halluc=0.000
+  qwen/qwen3-32b                           × QDA-015  claims= 57  halluc=0.000
+  qwen/qwen3-32b                           × QAS-016  claims= 49  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-017  claims= 57  halluc=0.000
+  qwen/qwen3-32b                           × QDA-018  claims= 30  halluc=0.000
+  qwen/qwen3-32b                           × QAS-019  claims= 35  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-020  claims= 53  halluc=0.000
+  qwen/qwen3-32b                           × QDA-021  claims= 47  halluc=0.000
+  qwen/qwen3-32b                           × QAS-022  claims= 38  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-023  claims= 83  halluc=0.000
+  qwen/qwen3-32b                           × QDA-024  claims= 30  halluc=0.000
+  qwen/qwen3-32b                           × QAS-025  claims= 41  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-026  claims= 42  halluc=0.000
+  qwen/qwen3-32b                           × QDA-027  claims= 44  halluc=0.000
+  qwen/qwen3-32b                           × QAS-028  claims= 59  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-029  claims= 53  halluc=0.000
+  qwen/qwen3-32b                           × QDA-030  claims= 48  halluc=0.000
+  qwen/qwen3-32b                           × QAS-031  claims= 45  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-032  claims= 92  halluc=0.000
+  qwen/qwen3-32b                           × QDA-033  claims= 53  halluc=0.000
+  qwen/qwen3-32b                           × QAS-034  claims= 58  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-035  claims= 84  halluc=0.000
+  qwen/qwen3-32b                           × QDA-036  claims= 41  halluc=0.000
+  qwen/qwen3-32b                           × QAS-037  claims= 40  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-038  claims= 67  halluc=0.000
+  qwen/qwen3-32b                           × QDA-039  claims= 40  halluc=0.000
+  qwen/qwen3-32b                           × QAS-040  claims= 47  halluc=0.000
+  qwen/qwen3-32b                           × QDA-041  claims= 50  halluc=0.000
+  qwen/qwen3-32b                           × QAS-042  claims= 41  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-043  claims= 87  halluc=0.000
+  qwen/qwen3-32b                           × QDA-044  claims= 43  halluc=0.000
+  qwen/qwen3-32b                           × QAS-045  claims= 49  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-046  claims=108  halluc=0.000
+  qwen/qwen3-32b                           × QDA-047  claims= 84  halluc=0.000
+  qwen/qwen3-32b                           × QAS-048  claims= 88  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-049  claims=100  halluc=0.000
+  qwen/qwen3-32b                           × QDA-050  claims= 41  halluc=0.000
+  qwen/qwen3-32b                           × QAS-051  claims= 51  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-052  claims= 59  halluc=0.000
+  qwen/qwen3-32b                           × QDA-053  claims= 51  halluc=0.000
+  qwen/qwen3-32b                           × QAS-054  claims= 40  halluc=0.000
+  qwen/qwen3-32b                           × QMoA-055  claims= 22  halluc=0.000
+  qwen/qwen3-32b                           × QDA-056  claims= 54  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-001  claims= 38  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-002  claims= 16  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-003  claims= 33  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-004  claims= 35  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-005  claims= 36  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-006  claims= 38  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-007  claims= 35  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-008  claims= 40  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-009  claims= 38  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-010  claims= 28  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-011  claims= 40  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-012  claims= 52  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-013  claims= 29  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-014  claims= 37  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-015  claims= 34  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-016  claims= 41  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-017  claims= 42  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-018  claims= 28  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-019  claims= 37  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-020  claims= 46  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-021  claims= 38  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-022  claims= 27  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-023  claims= 45  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-024  claims= 37  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-025  claims= 25  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-026  claims= 43  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-027  claims= 26  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-028  claims= 30  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-029  claims= 50  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-030  claims= 34  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-031  claims= 46  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-032  claims= 54  halluc=0.018
+  qwen/qwen3.6-27b                         × QDA-033  claims= 41  halluc=0.024
+  qwen/qwen3.6-27b                         × QAS-034  claims= 33  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-035  claims= 34  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-036  claims= 31  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-037  claims= 40  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-038  claims= 38  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-039  claims= 33  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-040  claims= 27  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-041  claims= 28  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-042  claims= 23  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-043  claims= 20  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-044  claims= 29  halluc=0.035
+  qwen/qwen3.6-27b                         × QAS-045  claims= 27  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-046  claims= 50  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-047  claims= 36  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-048  claims= 21  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-049  claims= 32  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-050  claims= 36  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-051  claims= 29  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-052  claims= 41  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-053  claims= 36  halluc=0.000
+  qwen/qwen3.6-27b                         × QAS-054  claims= 32  halluc=0.000
+  qwen/qwen3.6-27b                         × QMoA-055  claims= 47  halluc=0.000
+  qwen/qwen3.6-27b                         × QDA-056  claims= 25  halluc=0.040
+  mistral/mistral-small-latest             × QAS-001  claims=  5  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-002  claims=  1  halluc=0.000
+  mistral/mistral-small-latest             × QDA-003  claims=  8  halluc=0.000
+  mistral/mistral-small-latest             × QAS-004  claims=  2  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-005  claims=  4  halluc=0.000
+  mistral/mistral-small-latest             × QDA-006  claims=  2  halluc=0.000
+  mistral/mistral-small-latest             × QAS-007  claims=  5  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-008  claims=  1  halluc=0.000
+  mistral/mistral-small-latest             × QDA-009  claims=  6  halluc=0.000
+  mistral/mistral-small-latest             × QAS-010  claims=  2  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-011  claims=  3  halluc=0.000
+  mistral/mistral-small-latest             × QDA-012  claims=  4  halluc=0.000
+  mistral/mistral-small-latest             × QAS-013  claims=  6  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-014  claims=  3  halluc=0.000
+  mistral/mistral-small-latest             × QDA-015  claims=  3  halluc=0.000
+  mistral/mistral-small-latest             × QAS-016  claims=  5  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-017  claims=  1  halluc=0.000
+  mistral/mistral-small-latest             × QDA-018  claims=  2  halluc=0.000
+  mistral/mistral-small-latest             × QAS-019  claims=  6  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-020  claims=  1  halluc=0.000
+  mistral/mistral-small-latest             × QDA-021  claims=  1  halluc=0.000
+  mistral/mistral-small-latest             × QAS-022  claims=  4  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-023  claims=  2  halluc=0.000
+  mistral/mistral-small-latest             × QDA-024  claims=  2  halluc=0.000
+  mistral/mistral-small-latest             × QAS-025  claims=  5  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-026  claims=  1  halluc=0.000
+  mistral/mistral-small-latest             × QDA-027  claims=  3  halluc=0.000
+  mistral/mistral-small-latest             × QAS-028  claims=  7  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-029  claims=  3  halluc=0.000
+  mistral/mistral-small-latest             × QDA-030  claims=  3  halluc=0.000
+  mistral/mistral-small-latest             × QAS-031  claims=  6  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-032  claims=  2  halluc=0.000
+  mistral/mistral-small-latest             × QDA-033  claims=  7  halluc=0.000
+  mistral/mistral-small-latest             × QAS-034  claims=  4  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-035  claims=  7  halluc=0.000
+  mistral/mistral-small-latest             × QDA-036  claims=  5  halluc=0.000
+  mistral/mistral-small-latest             × QAS-037  claims=  2  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-038  claims=  4  halluc=0.000
+  mistral/mistral-small-latest             × QDA-039  claims=  3  halluc=0.000
+  mistral/mistral-small-latest             × QAS-040  claims=  2  halluc=0.000
+  mistral/mistral-small-latest             × QDA-041  claims=  9  halluc=0.000
+  mistral/mistral-small-latest             × QAS-042  claims=  5  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-043  claims=  4  halluc=0.000
+  mistral/mistral-small-latest             × QDA-044  claims=  4  halluc=0.000
+  mistral/mistral-small-latest             × QAS-045  claims=  3  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-046  claims=  3  halluc=0.000
+  mistral/mistral-small-latest             × QDA-047  claims=  3  halluc=0.000
+  mistral/mistral-small-latest             × QAS-048  claims=  4  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-049  claims=  2  halluc=0.000
+  mistral/mistral-small-latest             × QDA-050  claims=  4  halluc=0.000
+  mistral/mistral-small-latest             × QAS-051  claims=  6  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-052  claims=  5  halluc=0.000
+  mistral/mistral-small-latest             × QDA-053  claims=  8  halluc=0.000
+  mistral/mistral-small-latest             × QAS-054  claims=  3  halluc=0.000
+  mistral/mistral-small-latest             × QMoA-055  claims=  4  halluc=0.000
+  mistral/mistral-small-latest             × QDA-056  claims=  6  halluc=0.000
+
+
+============================================================
+🏆  LEADERBOARD
+============================================================
+
+                       🔬 TRACE-Reason Model Leaderboard                        
+┏━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃      ┃       ┃       ┃ Comp… ┃       ┃       ┃       ┃ Hall… ┃       ┃       ┃
+┃ Rank ┃ Model ┃ Prov… ┃     ↑ ┃ Fait… ┃ Corr… ┃ Comp… ┃     ↓ ┃ Late… ┃ Succ… ┃
+┡━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│  🥇  │ llam… │ groq  │ 0.50… │  3.00 │  3.00 │  3.00 │ 0.000 │   5.3 │ 56/56 │
+├──────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│  🥈  │ qwen… │ qwen  │ 0.50… │  3.00 │  3.00 │  3.00 │ 0.000 │  21.8 │ 55/56 │
+├──────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│  🥉  │ mist… │ mist… │ 0.50… │  3.00 │  3.00 │  3.00 │ 0.000 │   8.0 │ 56/56 │
+├──────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│  #4  │ llam… │ groq  │ 0.49… │  3.00 │  3.00 │  3.00 │ 0.001 │   2.7 │ 56/56 │
+├──────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│  #5  │ qwen… │ qwen  │ 0.49… │  3.00 │  3.00 │  3.00 │ 0.002 │  18.4 │ 56/56 │
+└──────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+20:27:03 [INFO] eval.leaderboard: JSON report saved → /home/heril/Trace/Trace-REASON/outputs/eval_onco_v1/eval_report.json
+/home/heril/.local/lib/python3.10/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/home/heril/Trace/Trace-REASON/eval/leaderboard.py:393: UserWarning: Glyph 129351 (\N{FIRST PLACE MEDAL}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/heril/Trace/Trace-REASON/eval/leaderboard.py:393: UserWarning: Glyph 129352 (\N{SECOND PLACE MEDAL}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/heril/Trace/Trace-REASON/eval/leaderboard.py:393: UserWarning: Glyph 129353 (\N{THIRD PLACE MEDAL}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/heril/Trace/Trace-REASON/eval/leaderboard.py:395: UserWarning: Glyph 129351 (\N{FIRST PLACE MEDAL}) missing from font(s) DejaVu Sans.
+  plt.savefig(output_path, dpi=150, bbox_inches="tight")
+/home/heril/Trace/Trace-REASON/eval/leaderboard.py:395: UserWarning: Glyph 129352 (\N{SECOND PLACE MEDAL}) missing from font(s) DejaVu Sans.
+  plt.savefig(output_path, dpi=150, bbox_inches="tight")
+/home/heril/Trace/Trace-REASON/eval/leaderboard.py:395: UserWarning: Glyph 129353 (\N{THIRD PLACE MEDAL}) missing from font(s) DejaVu Sans.
+  plt.savefig(output_path, dpi=150, bbox_inches="tight")
+20:27:04 [INFO] eval.leaderboard: Heatmap saved → /home/heril/Trace/Trace-REASON/outputs/eval_onco_v1/eval_heatmap.png
+20:27:04 [INFO] eval.leaderboard: Markdown summary saved → /home/heril/Trace/Trace-REASON/outputs/eval_onco_v1/eval_summary.md
+
+
+💾  Saving outputs to /home/heril/Trace/Trace-REASON/outputs/eval_onco_v1 …
+   ✓ JSON report  → /home/heril/Trace/Trace-REASON/outputs/eval_onco_v1/eval_report.json
+   ✓ Heatmap PNG  → /home/heril/Trace/Trace-REASON/outputs/eval_onco_v1/eval_heatmap.png
+   ✓ Markdown     → /home/heril/Trace/Trace-REASON/outputs/eval_onco_v1/eval_summary.md
+
+────────────────────────────────────────────────────────────
+🥇  Best model: groq/llama-3.3-70b-versatile
+    Composite score : 0.5000
+    Faithfulness    : 3.00/5
+    Correctness     : 3.00/5
+    Completeness    : 3.00/5
+    Hallucination ↓ : 0.000
+    Avg latency     : 5.3s
+
+⏱️   Total wall time: 3152.6s
+────────────────────────────────────────────────────────────
+
