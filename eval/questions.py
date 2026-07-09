@@ -8,9 +8,19 @@ Each EvalQuestion bundles:
   - A pre-built EvidencePackage fixture (hardcoded, no DB/embeddings needed)
   - Metadata (question_id, enzyme, mutation)
 
-Four biological targets are covered: LRRK2, GSK-3β, BACE1, MAO-B.
-Eight questions are provided (Q1-Q5 = kinetics/mutation, Q6-Q8 = drug active-site
-and drug-ability); the harness runs all of them by default.
+Biological targets covered
+--------------------------
+Core (Q1-Q8)  : LRRK2, GSK-3β, BACE1, MAO-B
+Mutation bank (Q9-Q23):
+  Cancer       — EGFR (L858R/T790M/C797S), BCR-ABL1 (T315I), BRAF (V600E),
+                 IDH1 (R132H), IDH2 (R140Q/R172K), PIK3CA (H1047R/E545K),
+                 FLT3 (D835Y/ITD)
+  Neurological — PINK1 (G309D/Q456X), PSEN1 (E280A/M146L)
+  Rare/Genetic — GBA1 (N370S/L444P)
+
+All variant positions, functional effects, and frequency data are
+sourced from UniProt natural variant annotations, ClinVar, and
+peer-reviewed pharmacogenomics literature.
 """
 
 from __future__ import annotations
@@ -688,7 +698,8 @@ def build_question_bank() -> List[EvalQuestion]:
 
 
 # Convenience mapping
-QUESTION_BANK: List[EvalQuestion] = build_question_bank()
+from eval.mutation_questions import build_mutation_questions
+QUESTION_BANK: List[EvalQuestion] = build_question_bank() + build_mutation_questions()
 QUESTION_BY_ID: Dict[str, EvalQuestion] = {q.question_id: q for q in QUESTION_BANK}
 
 
