@@ -1,0 +1,371 @@
+2026-07-16 17:02:55  INFO     ======================================================================
+2026-07-16 17:02:55  INFO     TRACE-Reason Mega Benchmark
+2026-07-16 17:02:55  INFO     ======================================================================
+2026-07-16 17:02:55  INFO     Fixed questions loaded: 23
+2026-07-16 17:02:55  INFO     Loaded CSV: 5716 enzymes
+2026-07-16 17:02:56  INFO     Generated 12 CSV mutation questions
+2026-07-16 17:02:56  INFO     Generated 12 CSV druggability questions
+2026-07-16 17:02:56  INFO     Generated 12 CSV mechanism questions
+2026-07-16 17:02:56  INFO     Total CSV questions: 36
+2026-07-16 17:02:56  INFO     CSV questions generated: 36
+2026-07-16 17:02:56  INFO     TOTAL questions: 59
+2026-07-16 17:02:56  INFO     Models to run: ['LLaMA-3.1-8B', 'Gemma2-9B']
+2026-07-16 17:02:56  INFO     Total API calls: 118
+2026-07-16 17:02:56  INFO     Estimated time: ~6 min
+2026-07-16 17:02:56  INFO     ────────────────────────────────────────────────────────────
+2026-07-16 17:02:56  INFO     MODEL: LLaMA-3.1-8B
+2026-07-16 17:02:56  INFO     ────────────────────────────────────────────────────────────
+2026-07-16 17:02:56  INFO     [1/118] LLaMA-3.1-8B → Q1 (LRRK2)
+2026-07-16 17:02:57  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:02:57  INFO       ✓ Success=True  Latency=1.06s  Tokens=491  Keywords=4/4 (100%)
+2026-07-16 17:02:59  INFO     [2/118] LLaMA-3.1-8B → Q2 (GSK3B)
+2026-07-16 17:03:00  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:03:00  INFO       ✓ Success=True  Latency=1.39s  Tokens=793  Keywords=4/4 (100%)
+2026-07-16 17:03:03  INFO     [3/118] LLaMA-3.1-8B → Q3 (BACE1)
+2026-07-16 17:03:04  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:03:04  INFO       ✓ Success=True  Latency=1.19s  Tokens=597  Keywords=3/4 (75%)
+2026-07-16 17:03:07  INFO     [4/118] LLaMA-3.1-8B → Q4 (LRRK2)
+2026-07-16 17:03:07  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:03:07  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:03:16  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:03:16  INFO       ✓ Success=True  Latency=9.37s  Tokens=591  Keywords=4/4 (100%)
+2026-07-16 17:03:19  INFO     [5/118] LLaMA-3.1-8B → Q5 (GSK3B)
+2026-07-16 17:03:19  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:03:19  INFO     Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-07-16 17:03:28  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:03:28  INFO     Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2026-07-16 17:03:32  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:03:32  INFO       ✓ Success=True  Latency=13.67s  Tokens=702  Keywords=4/4 (100%)
+2026-07-16 17:03:35  INFO     [6/118] LLaMA-3.1-8B → Q6 (BACE1)
+2026-07-16 17:03:35  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:03:35  INFO     Retrying request to /openai/v1/chat/completions in 10.000000 seconds
+2026-07-16 17:03:46  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:03:46  INFO       ✓ Success=True  Latency=11.31s  Tokens=653  Keywords=4/4 (100%)
+2026-07-16 17:03:49  INFO     [7/118] LLaMA-3.1-8B → Q7 (MAOB)
+2026-07-16 17:03:49  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:03:49  INFO     Retrying request to /openai/v1/chat/completions in 11.000000 seconds
+2026-07-16 17:04:01  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:04:01  INFO       ✓ Success=True  Latency=12.30s  Tokens=658  Keywords=4/4 (100%)
+2026-07-16 17:04:03  INFO     [8/118] LLaMA-3.1-8B → Q8 (LRRK2)
+2026-07-16 17:04:03  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:04:03  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:04:13  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:04:13  INFO       ✓ Success=True  Latency=9.48s  Tokens=876  Keywords=4/4 (100%)
+2026-07-16 17:04:15  INFO     [9/118] LLaMA-3.1-8B → Q9 (EGFR)
+2026-07-16 17:04:15  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:04:15  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:04:25  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:04:25  INFO       ✓ Success=True  Latency=9.76s  Tokens=752  Keywords=4/4 (100%)
+2026-07-16 17:04:28  INFO     [10/118] LLaMA-3.1-8B → Q10 (EGFR)
+2026-07-16 17:04:28  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:04:28  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:04:37  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:04:37  INFO       ✓ Success=True  Latency=9.35s  Tokens=512  Keywords=2/3 (67%)
+2026-07-16 17:04:39  INFO     [11/118] LLaMA-3.1-8B → Q11 (ABL1)
+2026-07-16 17:04:40  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:04:40  INFO     Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2026-07-16 17:04:43  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:04:43  INFO     Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2026-07-16 17:04:45  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:04:45  INFO       ✓ Success=True  Latency=5.40s  Tokens=627  Keywords=4/4 (100%)
+2026-07-16 17:04:47  INFO     [12/118] LLaMA-3.1-8B → Q12 (BRAF)
+2026-07-16 17:04:48  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:04:48  INFO     Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+2026-07-16 17:04:52  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:04:52  INFO     Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2026-07-16 17:04:53  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:04:53  INFO       ✓ Success=True  Latency=6.13s  Tokens=539  Keywords=4/4 (100%)
+2026-07-16 17:04:56  INFO     [13/118] LLaMA-3.1-8B → Q13 (IDH1)
+2026-07-16 17:04:56  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:04:56  INFO     Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+2026-07-16 17:05:01  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:05:01  INFO       ✓ Success=True  Latency=5.32s  Tokens=602  Keywords=4/4 (100%)
+2026-07-16 17:05:04  INFO     [14/118] LLaMA-3.1-8B → Q14 (IDH2)
+2026-07-16 17:05:04  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:05:04  INFO     Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-07-16 17:05:10  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:05:10  INFO       ✓ Success=True  Latency=6.53s  Tokens=547  Keywords=4/4 (100%)
+2026-07-16 17:05:13  INFO     [15/118] LLaMA-3.1-8B → Q15 (PIK3CA)
+2026-07-16 17:05:13  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:05:13  INFO     Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-07-16 17:05:19  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:05:19  INFO       ✓ Success=True  Latency=6.14s  Tokens=594  Keywords=4/4 (100%)
+2026-07-16 17:05:21  INFO     [16/118] LLaMA-3.1-8B → Q16 (FLT3)
+2026-07-16 17:05:22  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:05:22  INFO     Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-07-16 17:05:28  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:05:28  INFO       ✓ Success=True  Latency=6.88s  Tokens=748  Keywords=4/4 (100%)
+2026-07-16 17:05:31  INFO     [17/118] LLaMA-3.1-8B → Q17 (PINK1)
+2026-07-16 17:05:31  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:05:31  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:05:39  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:05:39  INFO       ✓ Success=True  Latency=7.82s  Tokens=686  Keywords=4/4 (100%)
+2026-07-16 17:05:41  INFO     [18/118] LLaMA-3.1-8B → Q18 (PINK1)
+2026-07-16 17:05:41  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:05:41  INFO     Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2026-07-16 17:05:45  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:05:45  INFO       ✓ Success=True  Latency=3.90s  Tokens=412  Keywords=4/4 (100%)
+2026-07-16 17:05:48  INFO     [19/118] LLaMA-3.1-8B → Q19 (PSEN1)
+2026-07-16 17:05:48  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:05:48  INFO     Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-07-16 17:05:54  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:05:54  INFO       ✓ Success=True  Latency=6.36s  Tokens=651  Keywords=4/4 (100%)
+2026-07-16 17:05:56  INFO     [20/118] LLaMA-3.1-8B → Q20 (PSEN1)
+2026-07-16 17:05:57  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:05:57  INFO     Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+2026-07-16 17:06:02  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:06:02  INFO       ✓ Success=True  Latency=5.22s  Tokens=641  Keywords=4/4 (100%)
+2026-07-16 17:06:04  INFO     [21/118] LLaMA-3.1-8B → Q21 (GBA1)
+2026-07-16 17:06:04  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:06:04  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:06:12  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:06:12  INFO       ✓ Success=True  Latency=7.58s  Tokens=902  Keywords=4/4 (100%)
+2026-07-16 17:06:14  INFO     [22/118] LLaMA-3.1-8B → Q22 (GBA1)
+2026-07-16 17:06:14  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:06:14  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:06:22  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:06:22  INFO       ✓ Success=True  Latency=7.38s  Tokens=658  Keywords=4/4 (100%)
+2026-07-16 17:06:24  INFO     [23/118] LLaMA-3.1-8B → Q23 (GBA1)
+2026-07-16 17:06:24  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:06:24  INFO     Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-07-16 17:06:31  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:06:31  INFO       ✓ Success=True  Latency=6.74s  Tokens=818  Keywords=3/3 (100%)
+2026-07-16 17:06:33  INFO     [24/118] LLaMA-3.1-8B → CSV-MUT-0001 (PIK3CD)
+2026-07-16 17:06:34  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:06:34  INFO     Retrying request to /openai/v1/chat/completions in 12.000000 seconds
+2026-07-16 17:06:47  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:06:47  INFO       ✓ Success=True  Latency=13.77s  Tokens=933  Keywords=2/2 (100%)
+2026-07-16 17:06:50  INFO     [25/118] LLaMA-3.1-8B → CSV-MUT-0002 (PIK3CD)
+2026-07-16 17:06:50  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:06:50  INFO     Retrying request to /openai/v1/chat/completions in 12.000000 seconds
+2026-07-16 17:07:02  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:07:02  INFO     Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2026-07-16 17:07:04  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:07:04  INFO       ✓ Success=True  Latency=14.65s  Tokens=933  Keywords=2/2 (100%)
+2026-07-16 17:07:07  INFO     [26/118] LLaMA-3.1-8B → CSV-MUT-0003 (PLK4)
+2026-07-16 17:07:07  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:07:07  INFO     Retrying request to /openai/v1/chat/completions in 10.000000 seconds
+2026-07-16 17:07:19  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:07:19  INFO       ✓ Success=True  Latency=11.89s  Tokens=827  Keywords=2/2 (100%)
+2026-07-16 17:07:21  INFO     [27/118] LLaMA-3.1-8B → CSV-MUT-0004 (CHEK1)
+2026-07-16 17:07:21  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:07:21  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:07:31  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:07:31  INFO       ✓ Success=True  Latency=9.39s  Tokens=849  Keywords=2/2 (100%)
+2026-07-16 17:07:33  INFO     [28/118] LLaMA-3.1-8B → CSV-MUT-0005 (DHFR)
+2026-07-16 17:07:33  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:07:33  INFO     Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-07-16 17:07:44  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:07:44  INFO       ✓ Success=True  Latency=10.54s  Tokens=920  Keywords=2/2 (100%)
+2026-07-16 17:07:46  INFO     [29/118] LLaMA-3.1-8B → CSV-MUT-0006 (ABL1)
+2026-07-16 17:07:46  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:07:46  INFO     Retrying request to /openai/v1/chat/completions in 12.000000 seconds
+2026-07-16 17:08:00  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:08:00  INFO       ✓ Success=True  Latency=13.52s  Tokens=1024  Keywords=2/2 (100%)
+2026-07-16 17:08:02  INFO     [30/118] LLaMA-3.1-8B → CSV-MUT-0007 (MT-ND5)
+2026-07-16 17:08:02  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:08:02  INFO     Retrying request to /openai/v1/chat/completions in 11.000000 seconds
+2026-07-16 17:08:15  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:08:15  INFO       ✓ Success=True  Latency=12.35s  Tokens=743  Keywords=2/2 (100%)
+2026-07-16 17:08:17  INFO     [31/118] LLaMA-3.1-8B → CSV-MUT-0008 (F11)
+2026-07-16 17:08:17  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:08:17  INFO     Retrying request to /openai/v1/chat/completions in 10.000000 seconds
+2026-07-16 17:08:29  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:08:29  INFO       ✓ Success=True  Latency=11.54s  Tokens=795  Keywords=2/2 (100%)
+2026-07-16 17:08:31  INFO     [32/118] LLaMA-3.1-8B → CSV-MUT-0009 (MMP1)
+2026-07-16 17:08:31  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:08:31  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:08:40  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:08:40  INFO       ✓ Success=True  Latency=8.72s  Tokens=625  Keywords=2/2 (100%)
+2026-07-16 17:08:42  INFO     [33/118] LLaMA-3.1-8B → CSV-MUT-0010 (GBA1)
+2026-07-16 17:08:43  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:08:43  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:08:52  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:08:52  INFO       ✓ Success=True  Latency=9.95s  Tokens=1024  Keywords=2/2 (100%)
+2026-07-16 17:08:55  INFO     [34/118] LLaMA-3.1-8B → CSV-MUT-0011 (GBA1)
+2026-07-16 17:08:55  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:08:55  INFO     Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-07-16 17:09:06  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:09:06  INFO       ✓ Success=True  Latency=10.85s  Tokens=1024  Keywords=2/2 (100%)
+2026-07-16 17:09:08  INFO     [35/118] LLaMA-3.1-8B → CSV-MUT-0012 (GBA1)
+2026-07-16 17:09:08  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:09:08  INFO     Retrying request to /openai/v1/chat/completions in 13.000000 seconds
+2026-07-16 17:09:23  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:09:23  INFO       ✓ Success=True  Latency=14.60s  Tokens=1024  Keywords=2/2 (100%)
+2026-07-16 17:09:25  INFO     [36/118] LLaMA-3.1-8B → CSV-DRUG-0013 (PIK3CD)
+2026-07-16 17:09:26  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:09:26  INFO     Retrying request to /openai/v1/chat/completions in 13.000000 seconds
+2026-07-16 17:09:40  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:09:40  INFO       ✓ Success=True  Latency=14.68s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:09:42  INFO     [37/118] LLaMA-3.1-8B → CSV-DRUG-0014 (PIK3CD)
+2026-07-16 17:09:43  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:09:43  INFO     Retrying request to /openai/v1/chat/completions in 15.000000 seconds
+2026-07-16 17:09:59  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:09:59  INFO       ✓ Success=True  Latency=16.46s  Tokens=696  Keywords=1/1 (100%)
+2026-07-16 17:10:01  INFO     [38/118] LLaMA-3.1-8B → CSV-DRUG-0015 (PLK4)
+2026-07-16 17:10:02  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:10:02  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:10:11  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:10:11  INFO       ✓ Success=True  Latency=9.28s  Tokens=708  Keywords=1/1 (100%)
+2026-07-16 17:10:13  INFO     [39/118] LLaMA-3.1-8B → CSV-DRUG-0016 (PSMD14)
+2026-07-16 17:10:13  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:10:13  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:10:23  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:10:23  INFO       ✓ Success=True  Latency=9.36s  Tokens=702  Keywords=1/1 (100%)
+2026-07-16 17:10:25  INFO     [40/118] LLaMA-3.1-8B → CSV-DRUG-0017 (ENPP3)
+2026-07-16 17:10:25  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:10:25  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:10:34  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:10:34  INFO       ✓ Success=True  Latency=8.51s  Tokens=599  Keywords=1/1 (100%)
+2026-07-16 17:10:36  INFO     [41/118] LLaMA-3.1-8B → CSV-DRUG-0018 (ENPP3)
+2026-07-16 17:10:36  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:10:36  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:10:44  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:10:44  INFO       ✓ Success=True  Latency=7.70s  Tokens=721  Keywords=1/1 (100%)
+2026-07-16 17:10:46  INFO     [42/118] LLaMA-3.1-8B → CSV-DRUG-0019 (PRMT5)
+2026-07-16 17:10:46  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:10:46  INFO     Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-07-16 17:10:57  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:10:57  INFO       ✓ Success=True  Latency=10.30s  Tokens=634  Keywords=1/1 (100%)
+2026-07-16 17:10:59  INFO     [43/118] LLaMA-3.1-8B → CSV-DRUG-0020 (CHEK1)
+2026-07-16 17:10:59  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:10:59  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:11:07  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:11:07  INFO       ✓ Success=True  Latency=8.35s  Tokens=734  Keywords=1/1 (100%)
+2026-07-16 17:11:10  INFO     [44/118] LLaMA-3.1-8B → CSV-DRUG-0021 (PDE5A)
+2026-07-16 17:11:10  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:11:10  INFO     Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-07-16 17:11:21  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:11:21  INFO       ✓ Success=True  Latency=10.65s  Tokens=820  Keywords=1/1 (100%)
+2026-07-16 17:11:23  INFO     [45/118] LLaMA-3.1-8B → CSV-DRUG-0022 (DHFR)
+2026-07-16 17:11:23  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:11:23  INFO     Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-07-16 17:11:34  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:11:34  INFO       ✓ Success=True  Latency=10.57s  Tokens=808  Keywords=1/1 (100%)
+2026-07-16 17:11:36  INFO     [46/118] LLaMA-3.1-8B → CSV-DRUG-0023 (ABL1)
+2026-07-16 17:11:36  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:11:36  INFO     Retrying request to /openai/v1/chat/completions in 12.000000 seconds
+2026-07-16 17:11:50  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:11:50  INFO       ✓ Success=True  Latency=13.47s  Tokens=757  Keywords=1/1 (100%)
+2026-07-16 17:11:52  INFO     [47/118] LLaMA-3.1-8B → CSV-DRUG-0024 (MT-ND5)
+2026-07-16 17:11:52  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:11:52  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:12:01  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:12:01  INFO       ✓ Success=True  Latency=9.34s  Tokens=675  Keywords=1/1 (100%)
+2026-07-16 17:12:04  INFO     [48/118] LLaMA-3.1-8B → CSV-MECH-0025 (ELOVL7)
+2026-07-16 17:12:04  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:12:04  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:12:13  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:12:13  INFO       ✓ Success=True  Latency=8.60s  Tokens=639  Keywords=1/1 (100%)
+2026-07-16 17:12:15  INFO     [49/118] LLaMA-3.1-8B → CSV-MECH-0026 (AKR1B15)
+2026-07-16 17:12:15  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:12:15  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:12:22  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:12:22  INFO       ✓ Success=True  Latency=7.29s  Tokens=692  Keywords=1/1 (100%)
+2026-07-16 17:12:25  INFO     [50/118] LLaMA-3.1-8B → CSV-MECH-0027 (AKR1B15)
+2026-07-16 17:12:25  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:12:25  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:12:33  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:12:33  INFO       ✓ Success=True  Latency=8.35s  Tokens=685  Keywords=1/1 (100%)
+2026-07-16 17:12:36  INFO     [51/118] LLaMA-3.1-8B → CSV-MECH-0028 (AKR1B15)
+2026-07-16 17:12:36  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:12:36  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:12:44  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:12:44  INFO       ✓ Success=True  Latency=8.25s  Tokens=624  Keywords=1/1 (100%)
+2026-07-16 17:12:46  INFO     [52/118] LLaMA-3.1-8B → CSV-MECH-0029 (AKR1B15)
+2026-07-16 17:12:47  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:12:47  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:12:54  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:12:54  INFO       ✓ Success=True  Latency=7.36s  Tokens=693  Keywords=1/1 (100%)
+2026-07-16 17:12:56  INFO     [53/118] LLaMA-3.1-8B → CSV-MECH-0030 (DNASE2)
+2026-07-16 17:12:56  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:12:56  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:13:05  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:13:05  INFO       ✓ Success=True  Latency=8.17s  Tokens=574  Keywords=1/1 (100%)
+2026-07-16 17:13:07  INFO     [54/118] LLaMA-3.1-8B → CSV-MECH-0031 (AGPS)
+2026-07-16 17:13:07  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:13:07  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:13:16  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:13:16  INFO       ✓ Success=True  Latency=9.10s  Tokens=596  Keywords=1/1 (100%)
+2026-07-16 17:13:19  INFO     [55/118] LLaMA-3.1-8B → CSV-MECH-0032 (MANBA)
+2026-07-16 17:13:19  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:13:19  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:13:26  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:13:26  INFO     Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2026-07-16 17:13:28  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:13:28  INFO       ✓ Success=True  Latency=9.24s  Tokens=680  Keywords=1/1 (100%)
+2026-07-16 17:13:30  INFO     [56/118] LLaMA-3.1-8B → CSV-MECH-0033 (STK25)
+2026-07-16 17:13:31  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:13:31  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:13:38  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:13:38  INFO       ✓ Success=True  Latency=7.17s  Tokens=584  Keywords=1/1 (100%)
+2026-07-16 17:13:40  INFO     [57/118] LLaMA-3.1-8B → CSV-MECH-0034 (USP9Y)
+2026-07-16 17:13:40  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:13:40  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:13:47  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:13:47  INFO       ✓ Success=True  Latency=7.23s  Tokens=664  Keywords=1/1 (100%)
+2026-07-16 17:13:50  INFO     [58/118] LLaMA-3.1-8B → CSV-MECH-0035 (NME4)
+2026-07-16 17:13:50  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:13:50  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:13:58  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:13:58  INFO       ✓ Success=True  Latency=8.40s  Tokens=708  Keywords=1/1 (100%)
+2026-07-16 17:14:01  INFO     [59/118] LLaMA-3.1-8B → CSV-MECH-0036 (CES2)
+2026-07-16 17:14:01  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:14:01  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:14:09  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:14:09  INFO       ✓ Success=True  Latency=8.19s  Tokens=653  Keywords=1/1 (100%)
+2026-07-16 17:14:11  INFO     ────────────────────────────────────────────────────────────
+2026-07-16 17:14:11  INFO     MODEL: Gemma2-9B
+2026-07-16 17:14:11  INFO     ────────────────────────────────────────────────────────────
+2026-07-16 17:14:11  INFO     [60/118] Gemma2-9B → Q1 (LRRK2)
+2026-07-16 17:14:11  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:11  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:11  INFO       ✓ Success=False  Latency=0.13s  Tokens=0  Keywords=0/4 (0%)
+2026-07-16 17:14:14  INFO     [61/118] Gemma2-9B → Q2 (GSK3B)
+2026-07-16 17:14:14  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:14  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:14  INFO       ✓ Success=False  Latency=0.14s  Tokens=0  Keywords=0/4 (0%)
+2026-07-16 17:14:17  INFO     [62/118] Gemma2-9B → Q3 (BACE1)
+2026-07-16 17:14:17  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:17  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:17  INFO       ✓ Success=False  Latency=0.11s  Tokens=0  Keywords=0/4 (0%)
+2026-07-16 17:14:19  INFO     [63/118] Gemma2-9B → Q4 (LRRK2)
+2026-07-16 17:14:19  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:19  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:19  INFO       ✓ Success=False  Latency=0.14s  Tokens=0  Keywords=0/4 (0%)
+2026-07-16 17:14:22  INFO     [64/118] Gemma2-9B → Q5 (GSK3B)
+2026-07-16 17:14:22  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:22  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:22  INFO       ✓ Success=False  Latency=0.12s  Tokens=0  Keywords=0/4 (0%)
+2026-07-16 17:14:25  INFO     [65/118] Gemma2-9B → Q6 (BACE1)
+2026-07-16 17:14:25  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:25  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:25  INFO       ✓ Success=False  Latency=0.12s  Tokens=0  Keywords=0/4 (0%)
+2026-07-16 17:14:27  INFO     [66/118] Gemma2-9B → Q7 (MAOB)
+2026-07-16 17:14:27  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:27  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:27  INFO       ✓ Success=False  Latency=0.14s  Tokens=0  Keywords=0/4 (0%)
+2026-07-16 17:14:30  INFO     [67/118] Gemma2-9B → Q8 (LRRK2)
+2026-07-16 17:14:30  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:30  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:30  INFO       ✓ Success=False  Latency=0.11s  Tokens=0  Keywords=0/4 (0%)
+2026-07-16 17:14:32  INFO     [68/118] Gemma2-9B → Q9 (EGFR)
+2026-07-16 17:14:33  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:33  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:33  INFO       ✓ Success=False  Latency=0.12s  Tokens=0  Keywords=0/4 (0%)
+2026-07-16 17:14:35  INFO     [69/118] Gemma2-9B → Q10 (EGFR)
+2026-07-16 17:14:35  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:35  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:35  INFO       ✓ Success=False  Latency=0.13s  Tokens=0  Keywords=0/3 (0%)
+2026-07-16 17:14:38  INFO     [70/118] Gemma2-9B → Q11 (ABL1)
+2026-07-16 17:14:38  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:38  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:38  INFO       ✓ Success=False  Latency=0.15s  Tokens=0  Keywords=0/4 (0%)
+2026-07-16 17:14:40  INFO     [71/118] Gemma2-9B → Q12 (BRAF)
+2026-07-16 17:14:40  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:40  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:40  INFO       ✓ Success=False  Latency=0.11s  Tokens=0  Keywords=0/4 (0%)
+2026-07-16 17:14:43  INFO     [72/118] Gemma2-9B → Q13 (IDH1)
+2026-07-16 17:14:43  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-16 17:14:43  WARNING  Groq gemma2-9b-it failed: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-07-16 17:14:43  INFO       ✓ Success=False  Latency=0.13s  Tokens=0  Keywords=0/4 (0%)

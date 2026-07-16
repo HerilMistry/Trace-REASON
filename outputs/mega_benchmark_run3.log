@@ -1,0 +1,318 @@
+2026-07-16 17:19:52  INFO     ======================================================================
+2026-07-16 17:19:52  INFO     TRACE-Reason Mega Benchmark
+2026-07-16 17:19:52  INFO     ======================================================================
+2026-07-16 17:19:52  INFO     Fixed questions loaded: 23
+2026-07-16 17:19:52  INFO     Loaded CSV: 5716 enzymes
+2026-07-16 17:19:52  INFO     Generated 12 CSV mutation questions
+2026-07-16 17:19:52  INFO     Generated 12 CSV druggability questions
+2026-07-16 17:19:52  INFO     Generated 12 CSV mechanism questions
+2026-07-16 17:19:52  INFO     Total CSV questions: 36
+2026-07-16 17:19:52  INFO     CSV questions generated: 36
+2026-07-16 17:19:52  INFO     TOTAL questions: 59
+2026-07-16 17:19:52  INFO     Models to run: ['GPT-OSS-20B']
+2026-07-16 17:19:52  INFO     Total API calls: 59
+2026-07-16 17:19:52  INFO     Estimated time: ~3 min
+2026-07-16 17:19:52  INFO     ────────────────────────────────────────────────────────────
+2026-07-16 17:19:52  INFO     MODEL: GPT-OSS-20B
+2026-07-16 17:19:52  INFO     ────────────────────────────────────────────────────────────
+2026-07-16 17:19:52  INFO     [1/59] GPT-OSS-20B → Q1 (LRRK2)
+2026-07-16 17:19:54  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:19:54  INFO       ✓ Success=True  Latency=1.66s  Tokens=1024  Keywords=3/4 (75%)
+2026-07-16 17:19:57  INFO     [2/59] GPT-OSS-20B → Q2 (GSK3B)
+2026-07-16 17:19:58  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:19:58  INFO       ✓ Success=True  Latency=1.62s  Tokens=1024  Keywords=4/4 (100%)
+2026-07-16 17:20:01  INFO     [3/59] GPT-OSS-20B → Q3 (BACE1)
+2026-07-16 17:20:02  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:20:02  INFO       ✓ Success=True  Latency=1.44s  Tokens=1024  Keywords=0/4 (0%)
+2026-07-16 17:20:05  INFO     [4/59] GPT-OSS-20B → Q4 (LRRK2)
+2026-07-16 17:20:06  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:20:06  INFO       ✓ Success=True  Latency=1.68s  Tokens=1024  Keywords=0/4 (0%)
+2026-07-16 17:20:09  INFO     [5/59] GPT-OSS-20B → Q5 (GSK3B)
+2026-07-16 17:20:09  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:20:09  INFO     Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2026-07-16 17:20:13  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:20:13  INFO       ✓ Success=True  Latency=3.77s  Tokens=1024  Keywords=4/4 (100%)
+2026-07-16 17:20:15  INFO     [6/59] GPT-OSS-20B → Q6 (BACE1)
+2026-07-16 17:20:15  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:20:15  INFO     Retrying request to /openai/v1/chat/completions in 10.000000 seconds
+2026-07-16 17:20:27  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:20:27  INFO       ✓ Success=True  Latency=11.90s  Tokens=1024  Keywords=0/4 (0%)
+2026-07-16 17:20:29  INFO     [7/59] GPT-OSS-20B → Q7 (MAOB)
+2026-07-16 17:20:30  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:20:30  INFO     Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-07-16 17:20:40  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:20:40  INFO       ✓ Success=True  Latency=10.83s  Tokens=983  Keywords=4/4 (100%)
+2026-07-16 17:20:43  INFO     [8/59] GPT-OSS-20B → Q8 (LRRK2)
+2026-07-16 17:20:43  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:20:43  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:20:53  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:20:53  INFO       ✓ Success=True  Latency=9.76s  Tokens=1024  Keywords=1/4 (25%)
+2026-07-16 17:20:55  INFO     [9/59] GPT-OSS-20B → Q9 (EGFR)
+2026-07-16 17:20:55  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:20:55  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:21:02  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:21:02  INFO       ✓ Success=True  Latency=7.26s  Tokens=837  Keywords=4/4 (100%)
+2026-07-16 17:21:05  INFO     [10/59] GPT-OSS-20B → Q10 (EGFR)
+2026-07-16 17:21:05  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:21:05  INFO     Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-07-16 17:21:11  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:21:11  INFO       ✓ Success=True  Latency=6.49s  Tokens=932  Keywords=3/3 (100%)
+2026-07-16 17:21:14  INFO     [11/59] GPT-OSS-20B → Q11 (ABL1)
+2026-07-16 17:21:14  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:21:14  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:21:23  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:21:23  INFO       ✓ Success=True  Latency=9.65s  Tokens=949  Keywords=3/4 (75%)
+2026-07-16 17:21:26  INFO     [12/59] GPT-OSS-20B → Q12 (BRAF)
+2026-07-16 17:21:26  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:21:26  INFO     Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-07-16 17:21:32  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:21:32  INFO       ✓ Success=True  Latency=6.44s  Tokens=963  Keywords=4/4 (100%)
+2026-07-16 17:21:35  INFO     [13/59] GPT-OSS-20B → Q13 (IDH1)
+2026-07-16 17:21:35  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:21:35  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:21:43  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:21:43  INFO       ✓ Success=True  Latency=7.74s  Tokens=1024  Keywords=3/4 (75%)
+2026-07-16 17:21:45  INFO     [14/59] GPT-OSS-20B → Q14 (IDH2)
+2026-07-16 17:21:45  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:21:45  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:21:53  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:21:53  INFO       ✓ Success=True  Latency=7.76s  Tokens=1024  Keywords=0/4 (0%)
+2026-07-16 17:21:55  INFO     [15/59] GPT-OSS-20B → Q15 (PIK3CA)
+2026-07-16 17:21:56  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:21:56  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:22:03  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:22:03  INFO       ✓ Success=True  Latency=7.84s  Tokens=1024  Keywords=0/4 (0%)
+2026-07-16 17:22:06  INFO     [16/59] GPT-OSS-20B → Q16 (FLT3)
+2026-07-16 17:22:06  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:22:06  INFO     Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-07-16 17:22:13  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:22:13  INFO       ✓ Success=True  Latency=6.76s  Tokens=1024  Keywords=4/4 (100%)
+2026-07-16 17:22:15  INFO     [17/59] GPT-OSS-20B → Q17 (PINK1)
+2026-07-16 17:22:15  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:22:15  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:22:23  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:22:23  INFO       ✓ Success=True  Latency=7.72s  Tokens=1024  Keywords=2/4 (50%)
+2026-07-16 17:22:25  INFO     [18/59] GPT-OSS-20B → Q18 (PINK1)
+2026-07-16 17:22:25  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:22:25  INFO     Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-07-16 17:22:32  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:22:32  INFO       ✓ Success=True  Latency=6.79s  Tokens=1024  Keywords=4/4 (100%)
+2026-07-16 17:22:35  INFO     [19/59] GPT-OSS-20B → Q19 (PSEN1)
+2026-07-16 17:22:35  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:22:35  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:22:42  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:22:42  INFO       ✓ Success=True  Latency=7.70s  Tokens=1024  Keywords=1/4 (25%)
+2026-07-16 17:22:45  INFO     [20/59] GPT-OSS-20B → Q20 (PSEN1)
+2026-07-16 17:22:45  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:22:45  INFO     Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-07-16 17:22:52  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:22:52  INFO       ✓ Success=True  Latency=6.75s  Tokens=1024  Keywords=4/4 (100%)
+2026-07-16 17:22:54  INFO     [21/59] GPT-OSS-20B → Q21 (GBA1)
+2026-07-16 17:22:54  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:22:54  INFO     Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2026-07-16 17:23:01  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:23:01  INFO       ✓ Success=True  Latency=6.92s  Tokens=1024  Keywords=3/4 (75%)
+2026-07-16 17:23:03  INFO     [22/59] GPT-OSS-20B → Q22 (GBA1)
+2026-07-16 17:23:04  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:23:04  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:23:11  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:23:11  INFO       ✓ Success=True  Latency=7.93s  Tokens=961  Keywords=4/4 (100%)
+2026-07-16 17:23:14  INFO     [23/59] GPT-OSS-20B → Q23 (GBA1)
+2026-07-16 17:23:14  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:23:14  INFO     Retrying request to /openai/v1/chat/completions in 4.000000 seconds
+2026-07-16 17:23:20  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:23:20  INFO       ✓ Success=True  Latency=5.86s  Tokens=1024  Keywords=3/3 (100%)
+2026-07-16 17:23:22  INFO     [24/59] GPT-OSS-20B → CSV-MUT-0001 (PIK3CD)
+2026-07-16 17:23:22  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:23:22  INFO     Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-07-16 17:23:33  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:23:33  INFO       ✓ Success=True  Latency=10.74s  Tokens=1024  Keywords=1/2 (50%)
+2026-07-16 17:23:35  INFO     [25/59] GPT-OSS-20B → CSV-MUT-0002 (PIK3CD)
+2026-07-16 17:23:36  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:23:36  INFO     Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-07-16 17:23:46  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:23:46  INFO       ✓ Success=True  Latency=11.03s  Tokens=1024  Keywords=0/2 (0%)
+2026-07-16 17:23:49  INFO     [26/59] GPT-OSS-20B → CSV-MUT-0003 (PLK4)
+2026-07-16 17:23:49  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:23:49  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:23:58  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:23:58  INFO       ✓ Success=True  Latency=8.76s  Tokens=1024  Keywords=1/2 (50%)
+2026-07-16 17:24:00  INFO     [27/59] GPT-OSS-20B → CSV-MUT-0004 (CHEK1)
+2026-07-16 17:24:00  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:24:00  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:24:09  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:24:09  INFO       ✓ Success=True  Latency=8.84s  Tokens=1024  Keywords=1/2 (50%)
+2026-07-16 17:24:12  INFO     [28/59] GPT-OSS-20B → CSV-MUT-0005 (DHFR)
+2026-07-16 17:24:12  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:24:12  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:24:21  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:24:21  INFO       ✓ Success=True  Latency=9.09s  Tokens=1024  Keywords=1/2 (50%)
+2026-07-16 17:24:23  INFO     [29/59] GPT-OSS-20B → CSV-MUT-0006 (ABL1)
+2026-07-16 17:24:23  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:24:23  INFO     Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-07-16 17:24:34  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:24:34  INFO       ✓ Success=True  Latency=10.67s  Tokens=1024  Keywords=0/2 (0%)
+2026-07-16 17:24:36  INFO     [30/59] GPT-OSS-20B → CSV-MUT-0007 (MT-ND5)
+2026-07-16 17:24:37  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:24:37  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:24:45  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:24:45  INFO       ✓ Success=True  Latency=8.68s  Tokens=1024  Keywords=1/2 (50%)
+2026-07-16 17:24:48  INFO     [31/59] GPT-OSS-20B → CSV-MUT-0008 (F11)
+2026-07-16 17:24:48  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:24:48  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:24:57  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:24:57  INFO       ✓ Success=True  Latency=8.96s  Tokens=1024  Keywords=1/2 (50%)
+2026-07-16 17:24:59  INFO     [32/59] GPT-OSS-20B → CSV-MUT-0009 (MMP1)
+2026-07-16 17:24:59  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:24:59  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:25:08  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:25:08  INFO       ✓ Success=True  Latency=8.86s  Tokens=1024  Keywords=2/2 (100%)
+2026-07-16 17:25:10  INFO     [33/59] GPT-OSS-20B → CSV-MUT-0010 (GBA1)
+2026-07-16 17:25:11  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:25:11  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:25:19  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:25:19  INFO       ✓ Success=True  Latency=8.77s  Tokens=1024  Keywords=0/2 (0%)
+2026-07-16 17:25:22  INFO     [34/59] GPT-OSS-20B → CSV-MUT-0011 (GBA1)
+2026-07-16 17:25:22  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:25:22  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:25:32  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:25:32  INFO       ✓ Success=True  Latency=9.82s  Tokens=1024  Keywords=1/2 (50%)
+2026-07-16 17:25:34  INFO     [35/59] GPT-OSS-20B → CSV-MUT-0012 (GBA1)
+2026-07-16 17:25:34  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:25:34  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:25:43  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:25:43  INFO       ✓ Success=True  Latency=9.09s  Tokens=1024  Keywords=0/2 (0%)
+2026-07-16 17:25:46  INFO     [36/59] GPT-OSS-20B → CSV-DRUG-0013 (PIK3CD)
+2026-07-16 17:25:46  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:25:46  INFO     Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-07-16 17:25:56  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:25:56  INFO       ✓ Success=True  Latency=10.70s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:25:59  INFO     [37/59] GPT-OSS-20B → CSV-DRUG-0014 (PIK3CD)
+2026-07-16 17:25:59  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:25:59  INFO     Retrying request to /openai/v1/chat/completions in 10.000000 seconds
+2026-07-16 17:26:11  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:26:11  INFO       ✓ Success=True  Latency=12.25s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:26:14  INFO     [38/59] GPT-OSS-20B → CSV-DRUG-0015 (PLK4)
+2026-07-16 17:26:14  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:26:14  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:26:22  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:26:22  INFO       ✓ Success=True  Latency=8.90s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:26:25  INFO     [39/59] GPT-OSS-20B → CSV-DRUG-0016 (PSMD14)
+2026-07-16 17:26:25  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:26:25  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:26:34  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:26:34  INFO       ✓ Success=True  Latency=9.44s  Tokens=1024  Keywords=0/1 (0%)
+2026-07-16 17:26:37  INFO     [40/59] GPT-OSS-20B → CSV-DRUG-0017 (ENPP3)
+2026-07-16 17:26:38  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:26:38  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:26:50  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:26:50  INFO       ✓ Success=True  Latency=13.01s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:26:52  INFO     [41/59] GPT-OSS-20B → CSV-DRUG-0018 (ENPP3)
+2026-07-16 17:26:53  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:26:53  INFO     Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2026-07-16 17:26:57  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:26:57  INFO       ✓ Success=True  Latency=4.98s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:27:00  INFO     [42/59] GPT-OSS-20B → CSV-DRUG-0019 (PRMT5)
+2026-07-16 17:27:03  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:27:03  INFO     Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2026-07-16 17:27:08  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:27:08  INFO       ✓ Success=True  Latency=7.96s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:27:10  INFO     [43/59] GPT-OSS-20B → CSV-DRUG-0020 (CHEK1)
+2026-07-16 17:27:12  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:27:12  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:27:19  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:27:19  INFO       ✓ Success=True  Latency=9.04s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:27:22  INFO     [44/59] GPT-OSS-20B → CSV-DRUG-0021 (PDE5A)
+2026-07-16 17:27:22  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:27:22  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:27:32  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:27:32  INFO       ✓ Success=True  Latency=10.09s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:27:34  INFO     [45/59] GPT-OSS-20B → CSV-DRUG-0022 (DHFR)
+2026-07-16 17:27:35  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:27:35  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:27:43  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:27:43  INFO       ✓ Success=True  Latency=8.69s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:27:46  INFO     [46/59] GPT-OSS-20B → CSV-DRUG-0023 (ABL1)
+2026-07-16 17:27:46  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:27:46  INFO     Retrying request to /openai/v1/chat/completions in 9.000000 seconds
+2026-07-16 17:27:57  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:27:57  INFO       ✓ Success=True  Latency=10.98s  Tokens=1024  Keywords=0/1 (0%)
+2026-07-16 17:27:59  INFO     [47/59] GPT-OSS-20B → CSV-DRUG-0024 (MT-ND5)
+2026-07-16 17:27:59  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:27:59  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:28:08  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:28:08  INFO       ✓ Success=True  Latency=8.55s  Tokens=1024  Keywords=0/1 (0%)
+2026-07-16 17:28:10  INFO     [48/59] GPT-OSS-20B → CSV-MECH-0025 (ELOVL7)
+2026-07-16 17:28:10  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:28:10  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:28:19  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:28:19  INFO       ✓ Success=True  Latency=8.86s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:28:22  INFO     [49/59] GPT-OSS-20B → CSV-MECH-0026 (AKR1B15)
+2026-07-16 17:28:22  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:28:22  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:28:29  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:28:29  INFO       ✓ Success=True  Latency=7.70s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:28:32  INFO     [50/59] GPT-OSS-20B → CSV-MECH-0027 (AKR1B15)
+2026-07-16 17:28:32  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:28:32  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:28:40  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:28:40  INFO       ✓ Success=True  Latency=8.67s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:28:43  INFO     [51/59] GPT-OSS-20B → CSV-MECH-0028 (AKR1B15)
+2026-07-16 17:28:43  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:28:43  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:28:50  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:28:50  INFO       ✓ Success=True  Latency=7.52s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:28:53  INFO     [52/59] GPT-OSS-20B → CSV-MECH-0029 (AKR1B15)
+2026-07-16 17:28:53  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:28:53  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:29:02  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:29:02  INFO       ✓ Success=True  Latency=8.73s  Tokens=1024  Keywords=0/1 (0%)
+2026-07-16 17:29:04  INFO     [53/59] GPT-OSS-20B → CSV-MECH-0030 (DNASE2)
+2026-07-16 17:29:04  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:29:04  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:29:13  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:29:13  INFO       ✓ Success=True  Latency=9.05s  Tokens=1024  Keywords=0/1 (0%)
+2026-07-16 17:29:16  INFO     [54/59] GPT-OSS-20B → CSV-MECH-0031 (AGPS)
+2026-07-16 17:29:16  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:29:16  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:29:25  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:29:25  INFO       ✓ Success=True  Latency=8.73s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:29:27  INFO     [55/59] GPT-OSS-20B → CSV-MECH-0032 (MANBA)
+2026-07-16 17:29:27  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:29:27  INFO     Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2026-07-16 17:29:37  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:29:37  INFO       ✓ Success=True  Latency=10.08s  Tokens=1024  Keywords=0/1 (0%)
+2026-07-16 17:29:40  INFO     [56/59] GPT-OSS-20B → CSV-MECH-0033 (STK25)
+2026-07-16 17:29:40  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:29:40  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:29:47  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:29:47  INFO       ✓ Success=True  Latency=7.81s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:29:50  INFO     [57/59] GPT-OSS-20B → CSV-MECH-0034 (USP9Y)
+2026-07-16 17:29:50  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:29:50  INFO     Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2026-07-16 17:29:59  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:29:59  INFO       ✓ Success=True  Latency=8.84s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:30:01  INFO     [58/59] GPT-OSS-20B → CSV-MECH-0035 (NME4)
+2026-07-16 17:30:01  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:30:01  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:30:09  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:30:09  INFO       ✓ Success=True  Latency=7.87s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:30:12  INFO     [59/59] GPT-OSS-20B → CSV-MECH-0036 (CES2)
+2026-07-16 17:30:12  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-07-16 17:30:12  INFO     Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2026-07-16 17:30:19  INFO     HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-16 17:30:19  INFO       ✓ Success=True  Latency=7.81s  Tokens=1024  Keywords=1/1 (100%)
+2026-07-16 17:30:22  INFO     Excel saved → /home/heril/Trace/Trace-REASON/outputs/mega_benchmark_results.xlsx
+2026-07-16 17:30:22  INFO     ======================================================================
+2026-07-16 17:30:22  INFO     DONE — 59 rows saved to /home/heril/Trace/Trace-REASON/outputs/mega_benchmark_results.xlsx
+2026-07-16 17:30:22  INFO     Log file: /home/heril/Trace/Trace-REASON/outputs/mega_benchmark.log
+2026-07-16 17:30:22  INFO     ======================================================================
+
+============================================================
+LEADERBOARD (Overall Keyword Score)
+============================================================
+  GPT-OSS-20B              61.6%   avg_latency=8.17s   n=59
+
+📊 Excel  → /home/heril/Trace/Trace-REASON/outputs/mega_benchmark_results.xlsx
+📋 Log    → /home/heril/Trace/Trace-REASON/outputs/mega_benchmark.log
+

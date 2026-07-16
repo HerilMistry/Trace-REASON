@@ -82,6 +82,9 @@ MODELS: Dict[str, Dict[str, str]] = {
     # ── Groq (LLaMA) ──────────────────────────────────────────────────────
     "groq/llama-3.3-70b-versatile":         {"provider": "groq",    "model_id": "llama-3.3-70b-versatile"},
     "groq/llama-4-scout-17b":               {"provider": "groq",    "model_id": "meta-llama/llama-4-scout-17b-16e-instruct"},
+    "groq/llama-3.1-8b-instant":            {"provider": "groq",    "model_id": "llama-3.1-8b-instant"},
+    "groq/gemma2-9b-it":                    {"provider": "groq",    "model_id": "gemma2-9b-it"},
+    "groq/gpt-oss-20b":                     {"provider": "groq",    "model_id": "openai/gpt-oss-20b"},
     # ── Qwen (via Groq OpenAI-compatible endpoint) ─────────────────────────
     "qwen/qwen3-32b":                       {"provider": "qwen",    "model_id": "qwen/qwen3-32b"},
     "qwen/qwen3.6-27b":                     {"provider": "qwen",    "model_id": "qwen/qwen3.6-27b"},
