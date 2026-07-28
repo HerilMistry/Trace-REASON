@@ -1,0 +1,101 @@
+{
+  "database_name": "TRACE-DB",
+  "full_name": "Transformative Reasoning Across Catalytic Enzymes",
+  "build_date": "2026-07-21",
+  "scope": "High-confidence enzyme-disease pairs (kinetic data + ChEMBL drug + ClinVar pathogenic variants)",
+  "sources": {
+    "BRENDA": {
+      "version": "2026.1",
+      "query_date": "2026-07-21",
+      "license": "CC BY 4.0",
+      "records": {
+        "kinetic_entries": 14264,
+        "reactions": 195
+      }
+    },
+    "SABIO-RK": {
+      "api": "https://sabiork.h-its.org/api",
+      "query_date": "2026-07-21",
+      "records": {
+        "kinetic_entries": 8018,
+        "reactions": 3574,
+        "mutant_entries": 2450
+      }
+    },
+    "UniProt": {
+      "query_date": "2026-07-21",
+      "records": {
+        "enzymes": 307,
+        "crossrefs": 307
+      }
+    },
+    "ChEMBL": {
+      "version": "r37",
+      "query_date": "2026-07-21",
+      "records": {
+        "targets": 307,
+        "approved_drugs": 13241
+      }
+    },
+    "Open_Targets": {
+      "version": "26.06",
+      "query_date": "2026-07-21",
+      "records": {
+        "disease_links": 15350
+      }
+    },
+    "ClinVar": {
+      "query_date": "2026-07-21",
+      "records": {
+        "pathogenic_variants_total": 63259
+      }
+    },
+    "PubMed": {
+      "via": "SABIO-RK publication links + BRENDA reference resolution + LiteratureSearch",
+      "query_date": "2026-07-21"
+    }
+  },
+  "table_counts": {
+    "enzyme": 307,
+    "ligand": 6866,
+    "reaction": 969,
+    "kinetics": 10153,
+    "mutation": 2471,
+    "crossref": 307,
+    "disease_link": 15303,
+    "trace_db_view": 15303
+  },
+  "verification": {
+    "reaction_provenance_query": "SELECT COUNT(*) FROM reaction WHERE organism != 'Homo sapiens' AND reaction_provenance IS NULL",
+    "reaction_provenance_result": 0,
+    "reaction_provenance_expected": 0,
+    "reaction_provenance_passed": true,
+    "non_human_reactions_with_provenance": 132,
+    "orphan_enzymes": 0,
+    "orphan_enzymes_expected": 0,
+    "orphan_enzymes_passed": true,
+    "kinetics_with_pubmed": 7940,
+    "kinetics_total": 10153,
+    "kinetics_pubmed_pct": 78.2
+  },
+  "confidence_tier_logic": {
+    "High": ">=2 PubMed sources + druggability (approved/clinical drug)",
+    "Medium": "1 PubMed + (druggability OR variant)",
+    "Low": "Open Targets score only"
+  },
+  "deduplication": "Same EC/ligand/organism/param/PubMed, values within 1% tolerance -> keep SABIO-RK (richer metadata) over BRENDA",
+  "outputs": {
+    "csv_tables": [
+      "trace_db_enzyme.csv",
+      "trace_db_ligand.csv",
+      "trace_db_reaction.csv",
+      "trace_db_kinetics.csv",
+      "trace_db_mutation.csv",
+      "trace_db_crossref.csv",
+      "trace_db_disease_link.csv",
+      "trace_db_view.csv"
+    ],
+    "sqlite": "trace_db.sqlite",
+    "provenance": "tracedb_provenance.json"
+  }
+}
